@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.53">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/vuepress-opencv-notes/favicon.svg"><title> | OpenCV 笔记合集</title><meta name="description" content="使用 C++ 和 Python 编写现代 OpenCV 应用">
+    <link rel="preload" href="/vuepress-opencv-notes/assets/style.b5a7f6ec.css" as="style" /><link rel="stylesheet" href="/vuepress-opencv-notes/assets/style.b5a7f6ec.css" />
+    <link rel="modulepreload" href="/vuepress-opencv-notes/assets/app.68b5caaf.js"><link rel="modulepreload" href="/vuepress-opencv-notes/assets/404.html.e23c5ddf.js"><link rel="modulepreload" href="/vuepress-opencv-notes/assets/404.html.c3e557d0.js"><link rel="prefetch" href="/vuepress-opencv-notes/assets/index.html.0d807007.js" as="script" /><link rel="prefetch" href="/vuepress-opencv-notes/assets/index.html.3605c674.js" as="script" /><link rel="prefetch" href="/vuepress-opencv-notes/assets/index.html.21c67115.js" as="script" /><link rel="prefetch" href="/vuepress-opencv-notes/assets/index.html.4ac11ac5.js" as="script" /><link rel="prefetch" href="/vuepress-opencv-notes/assets/mermaid.esm.8cc29e98.js" as="script" />
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/vuepress-opencv-notes/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/vuepress-opencv-notes/assets/app.68b5caaf.js" defer></script>
+  </body>
+</html>
