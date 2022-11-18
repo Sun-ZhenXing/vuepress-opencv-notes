@@ -30,7 +30,7 @@ OpenCV 提供两种用户界面选项：
 - 基于原生用户界面的基本界面，适用于 Mac OS 的 cocoa 或 carbon，以及适用于 Linux 或 Windows 用户界面的 GTK，这些界面在编译 OpenCV 时被默认选择
 - 基于 Qt 的跨平台的略微高级的界面，编译时需要手动启用
 
-![](./images/2022-11-10-16-28-22.png)
+![](./images/2022-11-10-16-28-22.webp)
 
 ::: info 使用 Qt 支持的 OpenCV
 
@@ -156,11 +156,11 @@ cmake --build ./build --config Release --target ALL_BUILD -j 4 --
 
 :::
 
-![](./images/2022-11-10-16-28-22.png)
+![](./images/2022-11-10-16-28-22.webp)
 
 按任意键，出现：
 
-![](./images/2022-11-10-16-36-45.png)
+![](./images/2022-11-10-16-36-45.webp)
 
 ### 将滑块和鼠标事件添加到界面
 

@@ -370,6 +370,12 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+::: warning Windows 潜在错误
+
+Windows 调试摄像头可能出现莫名其妙的错误，查看 [附录](/learn-opencv-by-building-projects/appendix/windows-errors.md) 尝试解决。
+
+:::
+
 ## 2.9 其他基本对象类型
 
 我们已经了解了 `Mat` 和 `Vec3b` 类，还有很多类需要学习，常见的是：
