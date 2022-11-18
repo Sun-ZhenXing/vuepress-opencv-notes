@@ -1,6 +1,10 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
+
+const USER_NAME = 'Sun-ZhenXing'
+const BASE_PATH = '/vuepress-opencv-notes/'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -14,12 +18,12 @@ export default defineUserConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/vuepress-opencv-notes/favicon.svg' }]
+    ['link', { rel: 'icon', href: `${BASE_PATH}favicon.svg` }]
   ],
-  base: '/vuepress-opencv-notes/',
+  base: BASE_PATH,
   theme: defaultTheme({
     logo: '/favicon.svg',
-    repo: 'Sun-ZhenXing/vuepress-opencv-notes',
+    repo: `${USER_NAME}${BASE_PATH}`,
     navbar: [
       {
         text: '读书笔记',
@@ -48,7 +52,13 @@ export default defineUserConfig({
             '/learn-opencv-by-building-projects/chapter10/',
             '/learn-opencv-by-building-projects/chapter11/',
             '/learn-opencv-by-building-projects/chapter12/',
-            '/learn-opencv-by-building-projects/appendix/',
+            {
+              text: '附录',
+              children: [
+                '/learn-opencv-by-building-projects/appendix/',
+                '/learn-opencv-by-building-projects/appendix/windows-errors.md',
+              ]
+            },
           ]
         }
       ]
@@ -75,6 +85,9 @@ export default defineUserConfig({
       delay: 200,
     }),
     searchPlugin({
-    })
+    }),
+    copyCodePlugin({
+      showInMobile: true,
+    }),
   ]
 })

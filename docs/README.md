@@ -2,7 +2,7 @@
 home: true
 heroImage: /favicon.svg
 actions:
-  - text: 开始试读
+  - text: 开始阅读
     link: /learn-opencv-by-building-projects/
     type: primary
 features:
