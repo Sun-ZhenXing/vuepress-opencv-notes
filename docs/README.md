@@ -31,4 +31,6 @@ footer: OpenCV 笔记合集，由 @Sun-ZhenXing 创建
 12. [第 12 章](/learn-opencv-by-building-projects/chapter12/index.md)
 13. [附录](/learn-opencv-by-building-projects/appendix/index.md)
 
+## [OpenCV 开发实践总结](/opencv-development-practice/index.md)
+
 ## OpenCV Python 手册

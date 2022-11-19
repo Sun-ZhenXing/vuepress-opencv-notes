@@ -26,12 +26,16 @@ export default defineUserConfig({
     repo: `${USER_NAME}${BASE_PATH}`,
     navbar: [
       {
-        text: '读书笔记',
+        text: '合集',
         children: [
           {
             text: 'OpenCV4 计算机视觉项目实战笔记',
             link: '/learn-opencv-by-building-projects/'
-          }
+          },
+          {
+            text: 'OpenCV 开发实践总结',
+            link: '/opencv-development-practice/'
+          },
         ]
       }
     ],
@@ -59,6 +63,14 @@ export default defineUserConfig({
                 '/learn-opencv-by-building-projects/appendix/windows-errors.md',
               ]
             },
+          ]
+        }
+      ],
+      '/opencv-development-practice/': [
+        {
+          text: 'OpenCV 开发实践总结',
+          children: [
+            '/opencv-development-practice/dnn-deploy-yolov7/',
           ]
         }
       ]
