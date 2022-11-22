@@ -34,27 +34,7 @@ OpenCV 提供两种用户界面选项：
 
 ::: info 使用 Qt 支持的 OpenCV
 
-如果需要编译基于 Qt 的图形界面，启用 `-D WITH_QT=ON` 来编译，例如：
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local/opencv460 \
-    -D INSTALL_C_EXAMPLE=OFF \
-    -D BUILD_EXAMPLE=OFF \
-    -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.6.0/modules \
-    -D WITH_V4L=ON \
-    -D WITH_TBB=ON \
-    -D WITH_VTK=ON \
-    -D WITH_GTK=ON \
-    -D WITH_OPENMP=ON \
-    -D WITH_OPENGL=ON \
-    -D WITH_QT=ON \
-    -D BUILD_opencv_python3=OFF \
-    -D BUILD_TIFF=ON ..
-
-make -j $(nproc)
-sudo make install
-```
+如果需要编译支持 Qt 的 OpenCV，请阅读 [编译 Qt 支持的 OpenCV](../../opencv-development-practice/complie-and-build-guide/) 。
 
 :::
 
