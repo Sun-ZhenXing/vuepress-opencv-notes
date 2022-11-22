@@ -288,7 +288,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 ```
 
-编译：
+Linux 下编译：
 
 ```bash
 mkdir -p build
@@ -297,26 +297,9 @@ cmake ..
 make
 ```
 
-::: tip Windows 编译
+::: tip 构建指南
 
-Windows 使用 CMake 可以采用几种不同的方式：
-1. 创建 Visual Studio 项目，具体方法请自行搜索网络
-2. 使用 CMake-GUI 编译，下面是步骤
-3. 使用 CMake 命令行工具
-
-下面是使用 CMake-GUI 的步骤：
-1. 配置 `source` 文件夹和 `build` 文件夹
-2. 点击配置（Configure）
-3. 点击生成（Generate）
-
-在使用 CMake 推荐仍然使用 Visual Studio 作为后端，MinGW 在 Windows 并不被官方支持，因此有很多项目无法成功构建。下面的命令就是使用 VS 2019 作为后端生成 64 位程序的示例：
-
-```bash
-cmake -B ./build -G "Visual Studio 16 2019" -T host=x64 -A x64 .
-cmake --build ./build --config Release --target ALL_BUILD -j 4 --
-```
-
-新版本的 OpenCV 和旧版本的 Windows 驱动可能有冲突，产生一些问题，阅读详情参见附录。
+关于其他系统下的编译，或者需要编写各种系统兼容的程序，可以阅读 [OpenCV 使用 CMake 构建跨平台应用](../../opencv-development-practice/use-cmake-build-project/) 。
 
 :::
 

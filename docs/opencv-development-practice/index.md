@@ -16,7 +16,7 @@ description: OpenCV 开发的一些经验总结
 
 - [ ] OpenCV 基本图形变换
 - [ ] OpenCV C++ 编译和构建指南
-- [ ] OpenCV 使用 CMake 构建跨平台应用
+- [x] [OpenCV 使用 CMake 构建跨平台应用](./use-cmake-build-project/index.md)
 - [ ] OpenCV 常用几何变换
 - [ ] OpenCV 常见处理总结
 - [x] [OpenCV 使用 DNN 部署 YOLOv7](./dnn-deploy-yolov7/index.md)
