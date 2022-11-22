@@ -73,6 +73,12 @@ export default defineUserConfig({
         {
           text: 'OpenCV 开发实践总结',
           children: [
+            '/opencv-development-practice/basic-image-transform/',
+            '/opencv-development-practice/complie-and-build-guide/',
+            '/opencv-development-practice/skills-in-use/',
+            '/opencv-development-practice/use-cmake-build-project/',
+            '/opencv-development-practice/common-geo-transform/',
+            '/opencv-development-practice/ps-operator-alternative-guide/',
             '/opencv-development-practice/dnn-deploy-yolov7/',
           ]
         }
