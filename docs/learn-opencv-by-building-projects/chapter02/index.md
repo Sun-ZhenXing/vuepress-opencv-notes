@@ -305,6 +305,20 @@ make
 
 ## 2.8 读取视频和摄像头
 
+首先，我们介绍一个十分有用的类 `CommandLineParser`，它用于解析命令行的参数，在 OpenCV 3.0 中被引入。
+
+允许的参数以字符串的形式给出，可以分割为多行，其中每一行都是如下格式：
+
+```cpp
+"{name | default_value | description}"
+```
+
+使用类似 `@name` 格式定义的参数将会作为默认输入。下面是一些解析器的实用方法：
+- `parser.about(msg)`：程序的关于信息
+- `parser.has(name)`：是否存在指定参数
+- `parser.get<cls>(index)`：获取指定位置的参数
+- `parser.printMessage()`：打印信息
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -436,6 +450,14 @@ Scalar s2(s1);
 ```
 
 ### 2.9.3 `Point` 对象类型
+
+另一个非常常见的类模板是 `Point`，该类定义一个由其坐标 `x` 和 `y` 指定的 2D 点。
+
+::: tip Point3
+
+和 `Point` 一样，`Point3` 模板类用于定义指定的 3D 点。
+
+:::
 
 ### 2.9.4 `Size` 对象类型
 

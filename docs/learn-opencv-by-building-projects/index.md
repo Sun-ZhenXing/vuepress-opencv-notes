@@ -10,19 +10,19 @@ description: OpenCV4 — 计算机视觉项目实战的目录
 
 这里只是简短的笔记和概要，并不代表书的内容。
 
-1. [第 1 章](./chapter01/index.md)
-2. [第 2 章](./chapter02/index.md)
-3. [第 3 章](./chapter03/index.md)
-4. [第 4 章](./chapter04/index.md)
-5. [第 5 章](./chapter05/index.md)
-6. [第 6 章](./chapter06/index.md)
-7. [第 7 章](./chapter07/index.md)
-8. [第 8 章](./chapter08/index.md)
-9. [第 9 章](./chapter09/index.md)
-10. [第 10 章](./chapter10/index.md)
-11. [第 11 章](./chapter11/index.md)
-12. [第 12 章](./chapter12/index.md)
-13. [附录](./appendix/index.md)
+1. [第 1 章](./chapter01/)
+2. [第 2 章](./chapter02/)
+3. [第 3 章](./chapter03/)
+4. [第 4 章](./chapter04/)
+5. [第 5 章](./chapter05/)
+6. [第 6 章](./chapter06/)
+7. [第 7 章](./chapter07/)
+8. [第 8 章](./chapter08/)
+9. [第 9 章](./chapter09/)
+10. [第 10 章](./chapter10/)
+11. [第 11 章](./chapter11/)
+12. [第 12 章](./chapter12/)
+13. [附录](./appendix/)
     - [Windows 调试错误合集](./appendix/windows-errors.md)
 
 本文记录所使用的 OpenCV 是 OpenCV 4.6.0，和书本不同。而且书本很多翻译问题和表述问题，在此也将做出一些修正。本文记录和原文可能不同的点：
