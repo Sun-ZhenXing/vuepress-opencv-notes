@@ -939,7 +939,7 @@ packages:
       '@vuepress/plugin-theme-data': registry.npmmirror.com/@vuepress/plugin-theme-data/2.0.0-beta.53
       '@vuepress/shared': registry.npmmirror.com/@vuepress/shared/2.0.0-beta.53
       '@vuepress/utils': registry.npmmirror.com/@vuepress/utils/2.0.0-beta.53
-      '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.5.0_vue@3.2.45
+      '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.6.0_vue@3.2.45
       sass: registry.npmmirror.com/sass/1.56.1
       vue: registry.npmmirror.com/vue/3.2.45
       vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45
@@ -968,32 +968,32 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@vueuse/core/9.5.0_vue@3.2.45:
-    resolution: {integrity: sha512-6GsWBsJHEb3sYw15mbLrcbslAVY45pkzjJYTKYKCXv88z7srAF0VEW0q+oXKsl58tCbqooplInahXFg8Yo1m4w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/-/core-9.5.0.tgz}
-    id: registry.npmmirror.com/@vueuse/core/9.5.0
+  registry.npmmirror.com/@vueuse/core/9.6.0_vue@3.2.45:
+    resolution: {integrity: sha512-qGUcjKQXHgN+jqXEgpeZGoxdCbIDCdVPz3QiF1uyecVGbMuM63o96I1GjYx5zskKgRI0FKSNsVWM7rwrRMTf6A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/-/core-9.6.0.tgz}
+    id: registry.npmmirror.com/@vueuse/core/9.6.0
     name: '@vueuse/core'
-    version: 9.5.0
+    version: 9.6.0
     dependencies:
       '@types/web-bluetooth': registry.npmmirror.com/@types/web-bluetooth/0.0.16
-      '@vueuse/metadata': registry.npmmirror.com/@vueuse/metadata/9.5.0
-      '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/9.5.0_vue@3.2.45
+      '@vueuse/metadata': registry.npmmirror.com/@vueuse/metadata/9.6.0
+      '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/9.6.0_vue@3.2.45
       vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
     dev: true
 
-  registry.npmmirror.com/@vueuse/metadata/9.5.0:
-    resolution: {integrity: sha512-4M1AyPZmIv41pym+K5+4wup3bKuYebbH8w8BROY1hmT7rIwcyS4tEL+UsGz0Hiu1FCOxcoBrwtAizc0YmBJjyQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/metadata/-/metadata-9.5.0.tgz}
+  registry.npmmirror.com/@vueuse/metadata/9.6.0:
+    resolution: {integrity: sha512-sIC8R+kWkIdpi5X2z2Gk8TRYzmczDwHRhEFfCu2P+XW2JdPoXrziqsGpDDsN7ykBx4ilwieS7JUIweVGhvZ93w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/metadata/-/metadata-9.6.0.tgz}
     name: '@vueuse/metadata'
-    version: 9.5.0
+    version: 9.6.0
     dev: true
 
-  registry.npmmirror.com/@vueuse/shared/9.5.0_vue@3.2.45:
-    resolution: {integrity: sha512-HnnCWU1Vg9CVWRCcI8ohDKDRB2Sc4bTgT1XAIaoLSfVHHn+TKbrox6pd3klCSw4UDxkhDfOk8cAdcK+Z5KleCA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/shared/-/shared-9.5.0.tgz}
-    id: registry.npmmirror.com/@vueuse/shared/9.5.0
+  registry.npmmirror.com/@vueuse/shared/9.6.0_vue@3.2.45:
+    resolution: {integrity: sha512-/eDchxYYhkHnFyrb00t90UfjCx94kRHxc7J1GtBCqCG4HyPMX+krV9XJgVtWIsAMaxKVU4fC8NSUviG1JkwhUQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/shared/-/shared-9.6.0.tgz}
+    id: registry.npmmirror.com/@vueuse/shared/9.6.0
     name: '@vueuse/shared'
-    version: 9.5.0
+    version: 9.6.0
     dependencies:
       vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45
     transitivePeerDependencies:
@@ -3689,7 +3689,7 @@ packages:
       '@vuepress/client': registry.npmmirror.com/@vuepress/client/2.0.0-beta.53
       '@vuepress/shared': registry.npmmirror.com/@vuepress/shared/2.0.0-beta.53
       '@vuepress/utils': registry.npmmirror.com/@vuepress/utils/2.0.0-beta.53
-      '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.5.0_vue@3.2.45
+      '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.6.0_vue@3.2.45
       balloon-css: registry.npmmirror.com/balloon-css/1.2.0
       chart.js: registry.npmmirror.com/chart.js/4.0.1
       echarts: registry.npmmirror.com/echarts/5.4.0

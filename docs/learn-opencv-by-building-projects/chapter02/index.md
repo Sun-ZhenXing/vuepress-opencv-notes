@@ -444,9 +444,9 @@ $$
 可以使用 `[]` 运算符访问和读取下标位置的值，可以使用不同的方式初始化：
 
 ```cpp
-Scalar s0(0);
-Scalar s1(0.0, 1.0, 2.0, 3.0);
-Scalar s2(s1);
+cv::Scalar s0(0);
+cv::Scalar s1(0.0, 1.0, 2.0, 3.0);
+cv::Scalar s2(s1);
 ```
 
 ### 2.9.3 `Point` 对象类型
@@ -459,13 +459,97 @@ Scalar s2(s1);
 
 :::
 
+和 `Vec` 类一样，OpenCV 为方便定义了以下别名：
+
+```cpp
+typedef Point_<int> Point2i;
+typedef Point2i Point;
+typedef Point_<float> Point2f;
+typedef Point_<double> Point2d;
+```
+
+OpenCV 为 `Point` 定义了以下运算符：
+
+```cpp
+p1 = p2 + p3;
+p1 = p2 - p3;
+p1 = a * p2;
+p2 = p2 / a;
+p1 += p2;
+p1 -= p2;
+p1 *= a;
+p1 /= a;
+double value = norm(p1);
+p1 == p2;
+p1 != p2;
+```
+
+其中 `norm()` 仍然为计算欧几里得范数。
+
 ### 2.9.4 `Size` 对象类型
+
+`Size` 在 OpenCV 中被广泛使用，用于指定图像或者矩形的大小。这个类有两个重要的成员 `width` 和 `height`，以及 `area()` 方法。
+
+示例：
+
+```cpp
+cv::Size s(100, 100);
+cv::Mat img = cv::Mat::zeros(s, CV_8UC1);
+s.width = 200;
+int area = s.area();
+```
 
 ### 2.9.5 `Rect` 对象类型
 
+`Rect` 也是一个非常重要的模板类，用于定义以下参数的 2D 矩形：
+- 左上角是坐标
+- 矩形的宽度和高度
+
+`Rect` 用于定义图像的 **感兴趣区域**（ROI，Region of Interest），例如：
+
+```cpp
+cv::Mat img = cv::imread("lena.jpg");
+cv::Rect rect_roi(0, 0, 100, 100);
+cv::Mat img_roi = img(rect_roi);
+```
+
 ### 2.9.6 `RotatedRect` 对象类型
 
+`RotatedRect` 用于定义一个旋转矩形，参数由中心点、宽度、高度和旋转角度（单位：°）指定。其声明如下：
+
+```cpp
+RotatedRect(const Point2f& center, const Size2f& size, float angle);
+```
+
+这个类的一个有趣的方法是 `boundingBox()`，该函数返回一个包含旋转矩形的 `Rect` 。
+
 ## 2.10 基本矩阵运算
+
+创建一个 `Mat`：
+
+```cpp
+cv::Mat a = cv::Mat(cv::Size(5, 5), cv::CV_32F);
+```
+
+::: tip 从缓冲区创建
+
+使用 `Mat(size, type, point_to_buffer)` 可以使用来自第三方库的存储缓冲区创建一个新的矩阵，无需复制数据。
+
+:::
+
+常见的通道类型：
+- `CV_8UC1`
+- `CV_8UC3`
+- `CV_8UC4`
+- `CV_32FC1`
+- `CV_32FC3`
+- `CV_32FC4`
+
+::: tip 任何类型的矩阵
+
+使用 `CV_number_typeC(n)` 创建任何类型的矩阵，其中 `number_type` 是 8 位无符号数（`8U`）到 64 位浮点数（`64F`），其中 `(n)` 是通道数，允许的范围是 `[1, CV_CN_MAX]` 。
+
+:::
 
 C++ OpenCV 使用 `Mat` 类操作图像，其结构大致如下：
 
@@ -517,11 +601,73 @@ OpenCV 支持元素积，需要使用 `.mul()` 方法，同样也支持乘一个
 还有一些实用的数学函数：
 - `int countNonZero(src)` 计算非零元素数量
 - `void meanStdDev(src, mean, srddev)` 计算平均值和标准差
-- `void minMaxLoc(src, minVal, maxVal, minLoc, maxLoc)` 检测矩阵的最小值和最大值的位置
+- `void minMaxLoc(src, minVal, maxVal, minLoc, maxLoc)` 检测矩阵的最小值、最大值并且包括最值的位置
+
+::: tip 核心功能
+
+可以从官方文档查看 [各种模块](https://docs.opencv.org/4.6.0/modules.html) 的 API，从 Core 模块查看核心功能。
+
+:::
 
 ## 2.11 基本数据存储
 
 OpenCV 支持使用 XML/YAML 来存储和读取数据。
+
+### 写入文件
+
+要把一些 OpenCV 或其他数值写入文件，可以使用 `FileStorage` 类，同时要使用流运算符 `<<` 来操作 STL 流：
+
+```cpp
+#include <iostream>
+#include <opencv2/core.hpp>
+
+int main(int argc, char* argv[]) {
+    cv::FileStorage fs("test.yml", cv::FileStorage::WRITE);
+    int fps = 5;
+    fs << "fps" << fps;
+    cv::Mat m1 = cv::Mat::eye(2, 3, CV_32F);
+    cv::Mat m2 = cv::Mat::ones(3, 2, CV_32F);
+    cv::Mat result = (m1 + 1).mul(m1 + 3);
+    fs << "Result" << result;
+    fs.release();
+
+    cv::FileStorage fs2("test.yml", cv::FileStorage::READ);
+    cv::Mat r;
+    fs2["Result"] >> r;
+    std::cout << r << std::endl;
+    fs2.release();
+    return 0;
+}
+```
+
+完成后会创建一个 `test.yml` 文件，内容为：
+
+```yml
+%YAML:1.0
+---
+fps: 5
+Result: !!opencv-matrix
+   rows: 2
+   cols: 3
+   dt: f
+   data: [ 8., 3., 3., 3., 8., 3. ]
+```
+
+### 读取文件
+
+```cpp
+#include <iostream>
+#include <opencv2/core.hpp>
+
+int main(int argc, char* argv[]) {
+    cv::FileStorage fs2("test.yml", cv::FileStorage::READ);
+    cv::Mat r;
+    fs2["Result"] >> r;
+    std::cout << r << std::endl;
+    fs2.release();
+    return 0;
+}
+```
 
 ## 2.12 总结
 
