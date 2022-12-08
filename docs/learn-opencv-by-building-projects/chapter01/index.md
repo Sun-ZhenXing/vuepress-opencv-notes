@@ -131,7 +131,7 @@ OpenCV 提供了很多这样的功能，它们经过高度优化，一旦了解�
 
 ## 1.4 安装 OpenCV
 
-OpenCV 发行版下载：[OpenCV Releases](https://opencv.org/releases/) 。
+OpenCV 发行版下载：[OpenCV Releases](https://opencv.org/releases/)。
 
 ### 1.4.1 Windows
 
@@ -149,7 +149,7 @@ OpenCV 发行版下载：[OpenCV Releases](https://opencv.org/releases/) 。
 setx -m OPENCV_DIR D:\OpenCV4.6\opencv\build\x64\vc15
 ```
 
-安装后，在路径（PATH）上加入以下路径 `%OPENCV_DIR%/bin` 。
+安装后，在路径（PATH）上加入以下路径 `%OPENCV_DIR%/bin`。
 
 也可以将完整 `bin/` 路径加入 PATH：
 
@@ -193,4 +193,4 @@ cp <路径>/build/lib/pkgconfig/opencv.pc /usr/local/lib/pkgconfig.opencv4.pc
 
 本章讨论了计算机视觉系统，以及人类如何处理视觉数据。解释了为什么机器难以做到这一点，以及在设计计算机视觉库时需要考虑的因素。
 
-我们学习了 OpenCV 可以完成的工作，以及可用于完成这些任务的各种模块。最后学习了如何在各种操作系统中安装 OpenCV 。
+我们学习了 OpenCV 可以完成的工作，以及可用于完成这些任务的各种模块。最后学习了如何在各种操作系统中安装 OpenCV。

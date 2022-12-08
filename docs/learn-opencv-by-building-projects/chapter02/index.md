@@ -158,7 +158,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Utils)
 ```
 
-`add_subdirectory()` 告诉 CMake 分析所需子文件夹的 `CMakeLists.txt` 。
+`add_subdirectory()` 告诉 CMake 分析所需子文件夹的 `CMakeLists.txt`。
 
 下面是 `utils/` 文件夹下面的 `CMakeLists.txt`：
 
@@ -298,7 +298,7 @@ make
 
 ::: tip 构建指南
 
-关于其他系统下的编译，或者需要编写各种系统兼容的程序，可以阅读 [OpenCV 使用 CMake 构建跨平台应用](../../opencv-development-practice/use-cmake-build-project/) 。
+关于其他系统下的编译，或者需要编写各种系统兼容的程序，可以阅读 [OpenCV 使用 CMake 构建跨平台应用](../../opencv-development-practice/use-cmake-build-project/)。
 
 :::
 
@@ -520,7 +520,7 @@ cv::Mat img_roi = img(rect_roi);
 RotatedRect(const Point2f& center, const Size2f& size, float angle);
 ```
 
-这个类的一个有趣的方法是 `boundingBox()`，该函数返回一个包含旋转矩形的 `Rect` 。
+这个类的一个有趣的方法是 `boundingBox()`，该函数返回一个包含旋转矩形的 `Rect`。
 
 ## 2.10 基本矩阵运算
 
@@ -546,7 +546,7 @@ cv::Mat a = cv::Mat(cv::Size(5, 5), cv::CV_32F);
 
 ::: tip 任何类型的矩阵
 
-使用 `CV_number_typeC(n)` 创建任何类型的矩阵，其中 `number_type` 是 8 位无符号数（`8U`）到 64 位浮点数（`64F`），其中 `(n)` 是通道数，允许的范围是 `[1, CV_CN_MAX]` 。
+使用 `CV_number_typeC(n)` 创建任何类型的矩阵，其中 `number_type` 是 8 位无符号数（`8U`）到 64 位浮点数（`64F`），其中 `(n)` 是通道数，允许的范围是 `[1, CV_CN_MAX]`。
 
 :::
 

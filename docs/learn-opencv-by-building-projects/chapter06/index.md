@@ -61,7 +61,7 @@ graph TD
     Boost(["cv::ml::Boost"]) & RTrees(["cv::ml::RTrees"])
 ```
 
-`StatModel` 是 SVM 或 ANN 等机器学习类的基类，提供所有预测和读写等功能。`StatModel` 基本上是一个虚拟的类，其两个最重要的函数 `train()` 和 `predict()` 。`train()` 方法是负责训练数据集学习模型参数的主要方法，存在下面几种声明方式：
+`StatModel` 是 SVM 或 ANN 等机器学习类的基类，提供所有预测和读写等功能。`StatModel` 基本上是一个虚拟的类，其两个最重要的函数 `train()` 和 `predict()`。`train()` 方法是负责训练数据集学习模型参数的主要方法，存在下面几种声明方式：
 
 ```cpp
 virtual bool train(const Ptr<TrainData>& trainData, int flag=0);
@@ -117,7 +117,7 @@ graph TD
 
 ::: info OpenCV 机器学习官方文档
 
-有关机器学习模块的详细问题，阅读 [OpenCV ML 官方文档](https://docs.opencv.org/master/dd/ded/group__ml.html) 。
+有关机器学习模块的详细问题，阅读 [OpenCV ML 官方文档](https://docs.opencv.org/master/dd/ded/group__ml.html)。
 
 :::
 

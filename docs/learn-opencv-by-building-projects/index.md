@@ -5,7 +5,7 @@ description: OpenCV4 — 计算机视觉项目实战的目录
 
 # OpenCV4 — 计算机视觉项目实战
 
-书中的源代码：[GitHub](https://github.com/PacktPublishing/Learn-OpenCV-4-By-Building-Projects-Second-Edition) 。
+书中的源代码：[GitHub](https://github.com/PacktPublishing/Learn-OpenCV-4-By-Building-Projects-Second-Edition)。
 
 这里只是简短的笔记和概要，并不代表书的内容。
 

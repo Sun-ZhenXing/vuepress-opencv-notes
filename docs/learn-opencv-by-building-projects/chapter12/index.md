@@ -100,7 +100,7 @@ YOLO 使用 COCO 数据集，COCO 数据集包含 80 个类别。
 
 ### 12.4.3 将 YOLO 导入 OpenCV
 
-深度学习模块需要使用命名空间 `cv::dnn`，引入 `<opencv2/dnn.hpp>` 。
+深度学习模块需要使用命名空间 `cv::dnn`，引入 `<opencv2/dnn.hpp>`。
 
 OpenCV 的 `Mat` 图像需要转换为 DNN 张量 / Blob 格式才能输入到神经网络中，可以使用 `cv::dnn::blobFromImage()` 函数进行转换。
 
