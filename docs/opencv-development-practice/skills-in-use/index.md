@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: OpenCV 使用技巧总结
 description: 本文总结了一些 OpenCV 使用技巧，便于参考
 ---

@@ -2942,10 +2942,10 @@ packages:
       - encoding
     dev: true
 
-  registry.npmmirror.com/katex/0.16.3:
-    resolution: {integrity: sha512-3EykQddareoRmbtNiNEDgl3IGjryyrp2eg/25fHDEnlHymIDi33bptkMv6K4EOC2LZCybLW/ZkEo6Le+EM9pmA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/katex/-/katex-0.16.3.tgz}
+  registry.npmmirror.com/katex/0.16.4:
+    resolution: {integrity: sha512-WudRKUj8yyBeVDI4aYMNxhx5Vhh2PjpzQw1GRu/LVGqL4m1AxwD1GcUp0IMbdJaf5zsjtj8ghP0DOQRYhroNkw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/katex/-/katex-0.16.4.tgz}
     name: katex
-    version: 0.16.3
+    version: 0.16.4
     hasBin: true
     dependencies:
       commander: registry.npmmirror.com/commander/8.3.0
@@ -3901,7 +3901,7 @@ packages:
       echarts: registry.npmmirror.com/echarts/5.4.0
       flowchart.js: registry.npmmirror.com/flowchart.js/1.17.1
       juice: registry.npmmirror.com/juice/8.1.0
-      katex: registry.npmmirror.com/katex/0.16.3
+      katex: registry.npmmirror.com/katex/0.16.4
       markdown-it: registry.npmmirror.com/markdown-it/13.0.1
       mathjax-full: registry.npmmirror.com/mathjax-full/3.2.2
       mermaid: registry.npmmirror.com/mermaid/9.2.2

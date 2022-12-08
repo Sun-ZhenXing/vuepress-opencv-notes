@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: OpenCV 开发实践总结
 description: OpenCV 开发的一些经验总结
 ---

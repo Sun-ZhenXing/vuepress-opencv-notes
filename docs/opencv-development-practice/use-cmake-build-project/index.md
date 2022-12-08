@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: OpenCV 使用 CMake 构建跨平台应用
 description: 
 ---

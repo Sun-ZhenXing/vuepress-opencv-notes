@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: 目录
 description: OpenCV4 — 计算机视觉项目实战的目录
 ---

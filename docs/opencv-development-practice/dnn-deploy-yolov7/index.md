@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: OpenCV 使用 DNN 部署 YOLOv7
 description: 本文了解了深度神经网络在部署的时候需要解决的问题，以及部署 YOLOv7 的过程
 ---

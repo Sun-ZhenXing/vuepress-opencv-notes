@@ -1,5 +1,4 @@
 ---
-lang: zh-CN
 title: Windows 错误合集
 description: OpenCV 调试过程中在 Windows 平台上出现的错误
 ---
