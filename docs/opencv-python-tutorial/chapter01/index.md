@@ -5,6 +5,8 @@ description: 在不同的系统上安装 Python 版本的 OpenCV
 
 # 1. 安装 OpenCV
 
+[[TOC]]
+
 ## 1.1 OpenCV 的 Python 默认发行版
 
 OpenCV 提供 PyPI 发行的 Python 包，使用 Python 的二进制扩展并且是预编译的。
@@ -56,6 +58,12 @@ pip install opencv-python-headless
 ```bash
 pip install opencv-contrib-python-headless
 ```
+
+::: warning 版本一致
+
+`opencv-python` 和 `opencv-python-headless` 不能一起安装，否则导入包时产生冲突，另一个包无法被加载。安装 Contrib 版本也要和默认的 OpenCV 版本一致，否则会出现不兼容的问题。
+
+:::
 
 ## 1.3 使用其他包管理器
 
