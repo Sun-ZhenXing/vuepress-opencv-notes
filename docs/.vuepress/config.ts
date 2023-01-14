@@ -46,6 +46,10 @@ export default defineUserConfig({
             text: 'OpenCV 开发实践总结',
             link: '/opencv-development-practice/'
           },
+          {
+            text: 'Python OpenCV 教程',
+            link: '/opencv-development-practice/'
+          },
         ]
       }
     ],
@@ -74,12 +78,22 @@ export default defineUserConfig({
           text: 'OpenCV 开发实践总结',
           children: [
             '/opencv-development-practice/basic-image-transform/',
+            '/opencv-development-practice/common-geo-transform/',
             '/opencv-development-practice/complie-and-build-guide/',
+            '/opencv-development-practice/dnn-deploy-yolov7/',
+            '/opencv-development-practice/errors-in-windows/',
+            '/opencv-development-practice/ps-operator-alternative-guide/',
             '/opencv-development-practice/skills-in-use/',
             '/opencv-development-practice/use-cmake-build-project/',
-            '/opencv-development-practice/common-geo-transform/',
-            '/opencv-development-practice/ps-operator-alternative-guide/',
-            '/opencv-development-practice/dnn-deploy-yolov7/',
+          ]
+        }
+      ],
+      '/opencv-python-tutorial/': [
+        {
+          text: 'Python OpenCV 教程',
+          children: [
+            '/opencv-python-tutorial/chapter01/',
+            '/opencv-python-tutorial/chapter02/',
           ]
         }
       ]

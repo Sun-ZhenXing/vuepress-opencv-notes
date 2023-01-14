@@ -11,12 +11,4 @@ description: OpenCV 开发的一些经验总结
 
 :::
 
-## 目录
-
-- [ ] [OpenCV 基本图像变换](./basic-image-transform/)
-- [x] [OpenCV C++ 编译和构建指南](./complie-and-build-guide/)
-- [x] [OpenCV 使用技巧总结](./skills-in-use/)
-- [x] [OpenCV 使用 CMake 构建跨平台应用](./use-cmake-build-project/)
-- [ ] [OpenCV 常用几何变换](./common-geo-transform/)
-- [ ] [OpenCV PS 操作替代指南](./ps-operator-alternative-guide/)
-- [x] [OpenCV 使用 DNN 部署 YOLOv7](./dnn-deploy-yolov7/)
+<AutoCatalog />
