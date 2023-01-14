@@ -1,0 +1,58 @@
+// fix: code block overflow of md-enhance in default theme
+@media (max-width: 419px) {
+  .theme-default-content {
+    .hint-container div[class*=language-] {
+      margin: 0.85rem -1rem;
+    }
+
+    .tab-item div[class*=language-] {
+      margin: 0.85rem -0.8rem;
+    }
+  }
+}
+
+// optimize: code
+code {
+  padding: 0.25rem 0.15rem;
+}
+
+// optimize: print style
+@media print {
+  :root {
+    --c-text: #000;
+  }
+
+  main.page {
+    padding: 0;
+  }
+
+  header {
+    display: none;
+  }
+
+  // fix: code block will hide when print
+  pre[class*=language-] {
+    white-space: pre-wrap;
+  }
+
+  // fix: details will hide when print
+  details[open].hint-container.details {
+    display: block !important;
+  }
+
+  // fix: katex will hide when overflow
+  .katex-display>.katex {
+    white-space: pre-wrap !important;
+  }
+}
+
+// fix: copy katex code when selected
+.katex {
+  * {
+    user-select: none;
+  }
+
+  annotation {
+    user-select: all;
+  }
+}
