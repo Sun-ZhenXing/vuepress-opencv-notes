@@ -1,5 +1,5 @@
 ---
-title: 目录
+title: OpenCV4 — 计算机视觉项目实战的目录
 description: OpenCV4 — 计算机视觉项目实战的目录
 ---
 
@@ -21,8 +21,6 @@ description: OpenCV4 — 计算机视觉项目实战的目录
 10. [第 10 章](./chapter10/)
 11. [第 11 章](./chapter11/)
 12. [第 12 章](./chapter12/)
-13. [附录](./appendix/)
-    - [Windows 调试错误合集](./appendix/windows-errors.md)
 
 本文记录所使用的 OpenCV 是 OpenCV 4.6.0，和书本不同。而且书本很多翻译问题和表述问题，在此也将做出一些修正。本文记录和原文可能不同的点：
 - OpenCV 版本是 4.6.0.66，而原书为 4.0.0，加入了很多新特性

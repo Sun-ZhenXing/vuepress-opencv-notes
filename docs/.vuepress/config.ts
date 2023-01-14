@@ -66,13 +66,6 @@ export default defineUserConfig({
             '/learn-opencv-by-building-projects/chapter10/',
             '/learn-opencv-by-building-projects/chapter11/',
             '/learn-opencv-by-building-projects/chapter12/',
-            {
-              text: '附录',
-              children: [
-                '/learn-opencv-by-building-projects/appendix/',
-                '/learn-opencv-by-building-projects/appendix/windows-errors.md',
-              ]
-            },
           ]
         }
       ],

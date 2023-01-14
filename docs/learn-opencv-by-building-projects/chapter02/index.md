@@ -368,7 +368,7 @@ int main(int argc, char* argv[]) {
 
 ::: warning Windows 潜在错误
 
-Windows 调试摄像头可能出现莫名其妙的错误，查看 [附录](/learn-opencv-by-building-projects/appendix/windows-errors.md) 尝试解决。
+Windows 调试摄像头可能出现莫名其妙的错误，查看 [Windows 错误合集](../../opencv-development-practice/errors-in-windows/) 尝试解决。
 
 :::
 
