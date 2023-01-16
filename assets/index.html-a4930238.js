@@ -2,7 +2,7 @@ import{_ as i,M as e,p as u,q as r,R as n,N as a,V as t,t as s,a1 as c}from"./fr
 <span class="token keyword">print</span><span class="token punctuation">(</span>img<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 img<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span>
-</code></pre></div><div class="hint-container warning"><p class="hint-container-title">大量修改像素操作</p><p>NumPy 是经过优化了的进行快速矩阵运算的软件包。所以我们不推荐 逐个获取像素值并修改，这样会很慢，能有矩阵运算就不要用循环。</p></div><p>更优雅的方法：</p><div class="language-python" data-ext="py"><pre class="language-python"><code>img<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;messi5.jpg&#39;</span><span class="token punctuation">)</span>
+</code></pre></div><div class="hint-container warning"><p class="hint-container-title">大量修改像素操作</p><p>NumPy 是经过优化了的进行快速矩阵运算的软件包。所以我们不推荐 逐个获取像素值并修改，这样会很慢，能有矩阵运算就不要用循环。</p></div><p>更优雅的方法：</p><div class="language-python" data-ext="py"><pre class="language-python"><code>img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;messi5.jpg&#39;</span><span class="token punctuation">)</span>
 
 img<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
 img<span class="token punctuation">.</span>itemset<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
@@ -18,7 +18,7 @@ img<span class="token punctuation">[</span><span class="token punctuation">:</sp
 
 BLUE <span class="token operator">=</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
 
-img<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;messi5.jpg&#39;</span><span class="token punctuation">)</span>
+img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;messi5.jpg&#39;</span><span class="token punctuation">)</span>
 
 replicate <span class="token operator">=</span> cv2<span class="token punctuation">.</span>copyMakeBorder<span class="token punctuation">(</span>
     img<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>BORDER_REPLICATE<span class="token punctuation">)</span>
@@ -84,8 +84,8 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
 <span class="token comment">## 加载图像</span>
-img1<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;roi.jpg&#39;</span><span class="token punctuation">)</span>
-img2<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;opencv_logo.png&#39;</span><span class="token punctuation">)</span>
+img1 <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;roi.jpg&#39;</span><span class="token punctuation">)</span>
+img2 <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">&#39;opencv_logo.png&#39;</span><span class="token punctuation">)</span>
 
 <span class="token comment">## 选择 logo 的 ROI</span>
 rows<span class="token punctuation">,</span> cols<span class="token punctuation">,</span> channels <span class="token operator">=</span> img2<span class="token punctuation">.</span>shape
