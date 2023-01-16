@@ -94,6 +94,7 @@ export default defineUserConfig({
           children: [
             '/opencv-python-tutorial/chapter01/',
             '/opencv-python-tutorial/chapter02/',
+            '/opencv-python-tutorial/chapter03/',
           ]
         }
       ]
@@ -118,6 +119,18 @@ export default defineUserConfig({
       katex: true,
       mermaid: true,
       delay: 200,
+      stylize: [
+        {
+          matcher: '@def',
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'Badge',
+              attrs: { type: 'tip', vertical: 'middle' },
+              content: '定义'
+            }
+          }
+        }
+      ]
     }),
     searchProPlugin({}),
     autoCatalogPlugin({}),
