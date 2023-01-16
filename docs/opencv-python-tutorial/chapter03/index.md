@@ -48,7 +48,7 @@ NumPy 是经过优化了的进行快速矩阵运算的软件包。所以我们�
 更优雅的方法：
 
 ```python
-img: np.ndarray = cv2.imread('messi5.jpg')
+img = cv2.imread('messi5.jpg')
 
 img.item(10, 10, 2)
 img.itemset((10, 10, 2), 100)
@@ -111,7 +111,7 @@ import matplotlib.pyplot as plt
 
 BLUE = 255, 0, 0
 
-img: np.ndarray = cv2.imread('messi5.jpg')
+img = cv2.imread('messi5.jpg')
 
 replicate = cv2.copyMakeBorder(
     img, 10, 10, 10, 10, cv2.BORDER_REPLICATE)
@@ -231,8 +231,8 @@ import cv2
 import numpy as np
 
 ## 加载图像
-img1: np.ndarray = cv2.imread('roi.jpg')
-img2: np.ndarray = cv2.imread('opencv_logo.png')
+img1 = cv2.imread('roi.jpg')
+img2 = cv2.imread('opencv_logo.png')
 
 ## 选择 logo 的 ROI
 rows, cols, channels = img2.shape

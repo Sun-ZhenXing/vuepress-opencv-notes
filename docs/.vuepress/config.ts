@@ -48,7 +48,7 @@ export default defineUserConfig({
           },
           {
             text: 'Python OpenCV 教程',
-            link: '/opencv-development-practice/'
+            link: '/opencv-python-tutorial/'
           },
         ]
       }
@@ -95,6 +95,7 @@ export default defineUserConfig({
             '/opencv-python-tutorial/chapter01/',
             '/opencv-python-tutorial/chapter02/',
             '/opencv-python-tutorial/chapter03/',
+            '/opencv-python-tutorial/chapter04/',
           ]
         }
       ]
