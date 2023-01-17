@@ -289,6 +289,74 @@ plt.show()
 
 ### 4.3.1 简单阈值
 
+正如其名，这种方法非常简单。像素值高于阈值时，我们给这个像素赋予一个新值（可能是白色），否则我们给它赋予另外一种颜色（也许是黑色）。这个函数就是 `cv2.threshhold()`。
+
+这个函数的第一个参数就是原图像，原图像应该是灰度图。第二个参数就是用来对像素值进行分类的阈值。第三个参数就是当像素值高于（有时是小于）阈值时应该被赋予的新的像素值。OpenCV 提供了多种不同的阈值方法，这是有第四个参数来决定的。这些方法包括：
+- `cv2.THRESH_BINARY`
+    ::: center
+    ![](./images/THRESH_BINARY.svg)
+    :::
+- `cv2.THRESH_BINARY_INV`
+    ::: center
+    ![](./images/THRESH_BINARY_INV.svg)
+    :::
+- `cv2.THRESH_TRUNC`
+    ::: center
+    ![](./images/THRESH_TRUNC.svg)
+    :::
+- `cv2.THRESH_TOZERO`
+    ::: center
+    ![](./images/THRESH_TOZERO.svg)
+    :::
+- `cv2.THRESH_TOZERO_INV`
+    ::: center
+    ![](./images/THRESH_TOZERO_INV.svg)
+    :::
+
+::: details 如何绘制这些图？
+
+事实上，我们正是用 `cv2.threshold()` 这个函数本身来绘制这些图表。
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+src = np.array([[
+    *range(90, 240, 1),
+    *range(240, 40, -1),
+    *range(40, 200, 1)
+]], dtype=np.uint8)
+
+line = np.array(len(src[0]) * [160], dtype=np.uint8)
+
+threshs = [
+    'THRESH_BINARY',
+    'THRESH_BINARY_INV',
+    'THRESH_TRUNC',
+    'THRESH_TOZERO',
+    'THRESH_TOZERO_INV',
+]
+
+for name in threshs:
+    ret, thresh = cv2.threshold(src, 160, 255, getattr(cv2, name))
+    plt.figure(figsize=(6, 2))
+    plt.subplot(121)
+    plt.title('src')
+    plt.ylim(0, 255)
+    plt.plot(line)
+    plt.plot(src[0])
+    plt.subplot(122)
+    plt.title('cv2.' + name)
+    plt.ylim(0, 255)
+    plt.plot(line)
+    plt.plot(thresh[0])
+    # plt.show()
+    plt.savefig(name + '.svg')
+```
+
+:::
+
 ### 4.3.2 自适应阈值
 
 ### 4.3.3 Otsu’s 二值化
