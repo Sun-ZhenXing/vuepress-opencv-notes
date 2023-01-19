@@ -357,9 +357,104 @@ for name in threshs:
 
 :::
 
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+img = cv2.imread('test.jpg', 0)
+
+ret, thresh1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+ret, thresh2 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
+ret, thresh3 = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)
+ret, thresh4 = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO)
+ret, thresh5 = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO_INV)
+
+titles = [
+    'Original Image',
+    'THRESH_BINARY',
+    'THRESH_BINARY_INV',
+    'THRESH_TRUNC',
+    'THRESH_TOZERO',
+    'THRESH_TOZERO_INV',
+]
+images = [img, thresh1, thresh2, thresh3, thresh4, thresh5]
+for i in range(6):
+    plt.subplot(2, 3, i+1), plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([])
+    plt.yticks([])
+plt.show()
+```
+
 ### 4.3.2 自适应阈值
 
+在前面的部分我们使用是全局阈值，整幅图像采用同一个数作为阈值。当这种方法并不适应与所有情况，尤其是当同一幅图像上的不同部分的具有不同亮度时，我们需要采用自适应阈值。此时的阈值是根据图像上的每一个小区域计算与其对应的阈值。因此在同一幅图像上的不同区域采用的是不同的阈值，从而使我们能在亮度不同的情况下得到更好的结果。
+
+此函数返回目标图像，参数如下：
+- `maxValue`：最大值
+- `adaptiveMethod`：指定计算阈值的方法
+    - `cv2.ADPTIVE_THRESH_MEAN_C`：阈值取自相邻区域的平均值
+    - `cv2.ADPTIVE_THRESH_GAUSSIAN_C`：阈值取值相邻区域的加权和，权重为一个高斯窗口
+- `thresholdType`：和上一节一致，二值化方式
+- `blockSize`：邻域大小（用来计算阈值的区域大小），只能是奇数
+- `C`：这就是是一个常数，阈值就等于的平均值或者加权平均值减去这个常数
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+img = cv2.imread('test.jpg', 0)
+# 中值滤波
+img = cv2.medianBlur(img, 5)
+ret, th1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+# 11 为 Block size, 2 为 C 值
+th2 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+                            cv2.THRESH_BINARY, 11, 2)
+th3 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                            cv2.THRESH_BINARY, 11, 2)
+titles = ['Original Image', 'Global Thresholding (v = 127)',
+          'Adaptive Mean Thresholding', 'Adaptive Gaussian Thresholding']
+images = [img, th1, th2, th3]
+for i in range(4):
+    plt.subplot(2, 2, i+1), plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([])
+    plt.yticks([])
+plt.show()
+```
+
 ### 4.3.3 Otsu’s 二值化
+
+在使用全局阈值时，我们怎么知道我们选取的这个数的好坏呢？答案就是不停的尝试。
+
+如果是一副双峰图像（简单来说双峰图像是指图像直方图中存在两个峰）呢？我们岂不是应该在两个峰之间的峰谷选一个值作为阈值？这就是 Otsu 二值化要做的。简单来说就是对一副双峰图像自动根据其直方图计算出一个阈值。（对于非双峰图像，这种方法得到的结果可能会不理想）。
+
+这里用到到的函数还是 `cv2.threshold()`，但是需要多传入一个参数（`flag: cv2.THRESH_OTSU`）。这时要把阈值设为 `0`。然后算法会找到最优阈值，这个最优阈值就是返回值 `retVal`。
+
+```python
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('test.jpg', 0)
+ret, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+plt.subplot(221)
+plt.imshow(img, cmap='gray')
+plt.title('Original');plt.xticks([]);plt.yticks([])
+
+plt.subplot(222)
+plt.imshow(thresh, cmap='gray')
+plt.title('Otsu');plt.xticks([]);plt.yticks([])
+
+plt.subplot(223)
+plt.hist(img.ravel(), 256)
+plt.axvline(x=ret, color='r', linestyle='dashed', linewidth=1)
+plt.title('Histogram')
+
+plt.show()
+```
 
 ### 4.3.4 Otsu’s 二值化是如何工作的？
 
@@ -374,29 +469,34 @@ $$
 其中
 
 $$
-q_1(t) = \sum_{i=1}^t P(i)
+\left\{
+\begin{aligned}
+    q_1(t) = \sum_{i=1}^t P(i) \\
+    q_2(t) = \sum_{i=t+1}^I P(i)
+\end{aligned}
+\right.
 $$
 
 $$
-q_2(t) = \sum_{i=t+1}^I P(i)
+\left\{
+\begin{aligned}
+    \mu_1(t) &= \sum_{i=1}^t \frac{iP(i)}{q_1(t)} \\
+    \mu_2(t) &= \sum_{i=t+1}^I \frac{iP(i)}{q_2(t)}
+\end{aligned}
+\right.
 $$
 
 $$
-\mu_1(t) = \sum_{i=1}^t \frac{iP(i)}{q_1(t)}
-$$
-
-$$
-\mu_2(t) = \sum_{i=t+1}^I \frac{iP(i)}{q_2(t)}
-$$
-
-$$
-\sigma _1^2(t) = \sum_{i=1}^t\left(i - \mu_1(t)\right)^2
-\frac{P(i)}{q_1(t)}
-$$
-
-$$
-\sigma _2^2(t) = \sum_{i=t+1}^I\left(i - \mu_2(t)\right)^2
-\frac{P(i)}{q_2(t)}
+\left\{
+\begin{aligned}
+    \sigma _1^2(t) &=
+    \sum_{i=1}^t\left(i - \mu_1(t)\right)^2
+    \frac{P(i)}{q_1(t)} \\
+    \sigma _2^2(t) &=
+    \sum_{i=t+1}^I\left(i - \mu_2(t)\right)^2
+    \frac{P(i)}{q_2(t)}
+\end{aligned}
+\right.
 $$
 
 ```python
@@ -425,12 +525,12 @@ for i in range(1, 256):
     b1, b2 = np.hsplit(bins, [i])
 
     # finding means and variances
-    m1, m2 = np.sum(p1*b1)/q1, np.sum(p2*b2)/q2
-    v1, v2 = np.sum(((b1-m1)**2)*p1)/q1,\
-        np.sum(((b2-m2)**2)*p2)/q2
+    m1, m2 = np.sum(p1 * b1) / q1, np.sum(p2 * b2) / q2
+    v1 = np.sum(((b1 - m1) ** 2) * p1) / q1
+    v2 = np.sum(((b2 - m2) ** 2) * p2) / q2
 
     # calculates the minimization function
-    fn = v1*q1 + v2*q2
+    fn = v1 * q1 + v2 * q2
     if fn < fn_min:
         fn_min = fn
         thresh = i
