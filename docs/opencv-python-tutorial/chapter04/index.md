@@ -541,11 +541,14 @@ ret, otsu = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY +
 print(thresh, ret)
 ```
 
-## 16 图像平滑
+## 4.4 图像平滑
 
-学习目标
+::: details 学习目标
+
 - 使用不同的低通滤波器对图像进行模糊
 - 自定义的滤波器对图像进行卷积（2D 卷积）
+
+:::
 
 ### 2D 卷积
 
