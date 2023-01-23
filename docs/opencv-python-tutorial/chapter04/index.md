@@ -593,15 +593,13 @@ plt.title('Averaging')
 plt.show()
 ```
 
->> img
-
 ### 图像模糊（图像平滑）
 
 使用低通滤波器可以达到图像模糊的目的。这对与去除噪音很有帮助。其实就是去除图像中的高频成分（比如：噪音，边界）。所以边界也会被模糊一点。（当然，也有一些模糊技术不会模糊掉边界）。OpenCV 提供了四种模糊技术。
 
 **滤波器**（Filter）和 **卷积核**（Convolution Kernel）可能会指代同一个对象，也可以称之为过滤器。
 
-### 16.1 平均
+### 4.4.1 平均
 
 这是由一个归一化卷积核完成的。它只是用卷积核覆盖区域所有像素的平均值来代替中心元素。可以使用函数 `cv2.blur()` 和 `cv2.boxFilter()` 来完这个任务。可以同看查看文档了解更多卷积核的细节。我们需要设定卷积核的宽和高。下面是一个 $3 \times 3$ 的归一化卷积核：
 
@@ -614,7 +612,11 @@ K = \frac{1}{9}
 \end{bmatrix}
 $$
 
-> 注意：如果你不想使用归一化卷积核，你应该使用 `cv2.boxFilter()`，这时要传入参数 `normalize=False`。
+::: info 不进行归一化
+
+如果你不想使用归一化卷积核，你应该使用 `cv2.boxFilter()`，这时要传入参数 `normalize=False`。
+
+:::
 
 ```python
 import cv2
@@ -634,7 +636,7 @@ plt.title('Blurred')
 plt.show()
 ```
 
-### 16.2 高斯模糊
+### 4.4.2 高斯模糊
 
 现在把卷积核换成高斯核（卷积核内的值是符合高斯分布的，核中心的值最大，其余根据距离核中心元素的距离递减，构成一个高斯小山包。原来的求平均数现在变成求加权平均数，全就是卷积核里的值）。
 
@@ -664,7 +666,7 @@ plt.title('Gaussian Blur')
 plt.show()
 ```
 
-### 16.3 中值模糊
+### 4.4.3 中值模糊
 
 顾名思义就是用与卷积核对应像素的中值来替代中心像素的值。这个滤波器经常用来去除 **椒盐噪声**（又称 **脉冲噪声**）。
 
@@ -690,7 +692,7 @@ plt.title('Median')
 plt.show()
 ```
 
-### 16.4 双边滤波
+### 4.4.4 双边滤波
 
 函数 `cv2.bilateralFilter()` 能在保持边界清晰的情况下有效的去除噪音。但是这种操作与其它滤波器相比会比较慢。
 
@@ -716,28 +718,32 @@ plt.title('Blurred')
 plt.show()
 ```
 
-> [MIT: Details about the bilateral filtering](http://people.csail.mit.edu/sparis/bf_course/)
+::: info 双边滤波
 
-## 17 形态学转换
+请阅读 [MIT: Details about the bilateral filtering](http://people.csail.mit.edu/sparis/bf_course/) 获得更多关于双边滤波的信息。
 
-学过目标
+:::
+
+## 4.5 形态学转换
+
+::: details 学习目标
+
 - 学习不同的形态学操作
     - 腐蚀
     - 膨胀
     - 开运算闭运算
+- 函数
+    - `cv2.erode()`
+    - `cv2.dilate()`
+    - `cv2.morphologyEx()`
 
-函数
-- `cv2.erode()`
-- `cv2.dilate()`
-- `cv2.morphologyEx()`
-
-### 原理
+:::
 
 形态学操作是根据图像形状进行的简单操作。一般情况下对二值化图像进行的操作。需要输入两个参数，一个是原始图像，第二个被称为结构化元素或核，它是用来决定操作的性质的。
 
 两个基本的形态学操作是腐蚀和膨胀。它们的变体构成了开运算，闭运算，梯度等。
 
-### 17.1 腐蚀
+### 4.5.1 腐蚀
 
 就像土壤侵蚀一样，这个操作会把前景物体的边界腐蚀掉（但是前景仍然是白色）。
 
@@ -767,7 +773,7 @@ plt.title('Erosion')
 plt.show()
 ```
 
-### 17.2 膨胀
+### 4.5.2 膨胀
 
 与腐蚀相反，与卷积核对应的原图像的像素值中只要有一个是 `1`，中心元素的像素值就是 `1`。所以这个操作会增加图像中的白色区域（前景）。
 
@@ -793,7 +799,7 @@ plt.title('Dilation')
 plt.show()
 ```
 
-### 17.3 开运算
+### 4.5.3 开运算
 
 先进行腐蚀再进行膨胀就叫做开运算。它被用来去除噪声。这里我们用到的函数是 `cv2.morphologyEx()`。
 
@@ -817,7 +823,7 @@ plt.title('Opening')
 plt.show()
 ```
 
-### 17.4 闭运算
+### 4.5.4 闭运算
 
 先膨胀再腐蚀。它经常被用来填充前景物体中的小洞，或者前景物体上的小黑点。
 
@@ -841,7 +847,7 @@ plt.title('Closing')
 plt.show()
 ```
 
-### 17.5 形态学梯度
+### 4.5.5 形态学梯度
 
 其实就是一幅图像膨胀与腐蚀的差别。
 
@@ -867,7 +873,7 @@ plt.title('Gradient')
 plt.show()
 ```
 
-### 17.6 礼帽
+### 4.5.6 礼帽
 
 原始图像与进行开运算之后得到的图像的差。下面的例子是用一个 $9 \times 9$ 的核进行礼帽操作的结果。
 
@@ -891,7 +897,7 @@ plt.title('Tophat')
 plt.show()
 ```
 
-### 17.7 黑帽
+### 4.5.7 黑帽
 
 进行闭运算之后得到的图像与原始图像的差。
 
@@ -915,21 +921,37 @@ plt.title('Blackhat')
 plt.show()
 ```
 
-### 17.8 形态学操作之间的关系
+### 4.5.8 形态学操作之间的关系
 
 形态学操作之间的关系：
-
 - 腐蚀（Erode）：全 `1` 则 `1`
 - 膨胀（Dilate）：有 `1` 则 `1`
-- 开运算（Opening）：`dst = open(src, element) = dilate(erode(src, element), element)`
-- 闭运算（Closing）：`dst = close(src, element) = erode(dilate(src, element), element)`
-- 形态学梯度（Morphological gradient）：`dst = morph_grad(src, element) = dilate(src, element) - erode(src, element)`
-- 礼帽（Top hat）：`dst = tophat(src, element) = src - open(src, element)`
-- 黑帽（Black hat）：`dst = blackhat(src, element) = close(src, element) - src`
+- 开运算（Opening）
+    ```python
+    dst = open(src, element) = dilate(erode(src, element), element)
+    ```
+- 闭运算（Closing）
+    ```python
+    dst = close(src, element) = erode(dilate(src, element), element)
+    ```
+- 形态学梯度（Morphological gradient）
+    ```python
+    dst = morph_grad(src, element) = dilate(src, element) - erode(src, element)
+    ```
+- 礼帽（Top hat）
+    ```python
+    dst = tophat(src, element) = src - open(src, element)
+    ```
+- 黑帽（Black hat）
+    ```python
+    dst = blackhat(src, element) = close(src, element) - src
+    ```
 
-### 结构化元素
+### 4.5.9 结构化元素
 
-在前面的例子中我们使用 Numpy 构建了结构化元素，它是正方形的。但有时我们需要构建一个椭圆形/圆形的核。为了实现这种要求，提供了 OpenCV 函数 `cv2.getStructuringElement()`。你只需要告诉他你需要的核的形状和大小。
+在前面的例子中我们使用 NumPy 构建了结构化元素，它是正方形的。但有时我们需要构建一个椭圆形/圆形的核。
+
+为了实现这种要求，提供了 OpenCV 函数 `cv2.getStructuringElement()`。你只需要告诉他你需要的核的形状和大小。
 
 ```python
 import cv2
@@ -964,30 +986,141 @@ array([[0, 0, 1, 0, 0],
        [0, 0, 1, 0, 0]], dtype=uint8)
 ```
 
-> [HIPR2：Morphology](https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm)
+::: info 形态学转换
 
-## 18 图像梯度
+请阅读 [HIPR2: Morphology](https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm)。
 
-目标
-• 图像梯度，图像边界等
-• 使用到的函数有：cv2.Sobel()，cv2.Schar()，cv2.Laplacian() 
+:::
 
-## 19 Canny 边缘检测
+## 4.6 图像梯度
 
-目标
-OpenCV 中的 Canny 边缘检测
-• 了解 Canny 边缘检测的概念
-• 学习函数 cv2.Canny()
+::: details 学习目标
 
-## 20 图像金字塔
+- 图像梯度，图像边界等
+- 函数
+    - `cv2.Sobel()`
+    - `cv2.Schar()`
+    - `cv2.Laplacian()`
 
-目标
-• 学习图像金字塔
-• 使用图像创建一个新水果：“橘子苹果”
-• 将要学习的函数有：cv2.pyrUp()，cv2.pyrDown()。
+:::
 
+梯度简单来说就是求导。
 
-## 21 OpenCV 中的轮廓
+OpenCV 提供了三种不同的梯度滤波器，或者说高通滤波器：Sobel，Scharr 和 Laplacian。
+
+Sobel，Scharr 其实就是求一阶或二阶导数。Scharr 是对 Sobel（使用小的卷积核求解求解梯度角度时）的优化。Laplacian 是求二阶导数。
+
+### 4.6.1 Sobel 算子和 Scharr 算子
+
+Sobel 算子是高斯平滑与微分操作的结合体，所以它的抗噪声能力很好。
+
+你可以设定求导的方向（`xorder` 或 `yorder`）。还可以设定使用的卷积核的大小（`ksize`）。如果 `ksize=-1`，会使用 $3 \times 3$ 的 Scharr 滤波器，它的的效果要比 $3 \times 3$ 的 Sobel 滤波器好（而且速度相同，所以在使用 $3 \times 3$ 滤波器时应该尽量使用 Scharr 滤波器）。$3 \times 3$ 的 Scharr 滤波器卷积核如下：
+
+$$
+K_x = \begin{bmatrix}
+    -3 & 0 & -3 \\
+    -10 & 0 & 10 \\
+    -3 & 0 & 3
+\end{bmatrix}
+$$
+
+$$
+K_y = \begin{bmatrix}
+    -3 & -10 & -3 \\
+    0 & 0 & 0 \\
+    3 & 10 & 3
+\end{bmatrix}
+$$
+
+### 4.6.2 Laplacian 算子
+
+拉普拉斯算子可以使用二阶导数的形式定义，可假设其离散实现类似于二阶 Sobel 导数，事实上，OpenCV 在计算拉普拉斯算子时直接调用 Sobel 算子。计算公式如下：
+
+$$
+\Delta \mathrm{src} =
+    \frac{\partial^2\mathrm{src} }{\partial x^2} +
+    \frac{\partial^2\mathrm{src} }{\partial y^2}
+$$
+
+拉普拉斯滤波器使用的卷积核：
+
+$$
+K = \begin{bmatrix}
+    0 & 1 & 0 \\
+    1 & -4 & 1 \\
+    0 & 1 & 0
+\end{bmatrix}
+$$
+
+### 4.6.3 实践
+
+以上函数的典型用法如下：
+
+```python
+cv2.Scharr(img, cv2.CV_64F, 1, 0, ksize=5)
+cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=5)
+cv2.Laplacian(img, cv2.CV_64F)
+```
+
+::: info 为什么使用浮点数
+
+我们在代码中使用的是 `cv2.CV_64F`。想象一下一个从黑到白的边界的导数是整数，而一个从白到黑的边界点导数却是负数。如果原图像的深度是 `np.int8` 时，所有的负值都会被截断变成 `0`，换句话说就是把把边界丢失掉。
+
+:::
+
+下面使用 $5 \times 5$ 的滤波器进行测试：
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+img = cv2.imread('test.jpg', 0)
+
+# cv2.CV_64F 输出图像的深度（数据类型）
+# 可以使用 -1，与原图像保持一致 np.uint8
+laplacian = cv2.Laplacian(img, cv2.CV_64F)
+# 参数 1,0 为只在 x 方向求一阶导数，最大可以求 2 阶导数
+sobelx = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=5)
+# 参数 0,1 为只在 y 方向求一阶导数，最大可以求 2 阶导数
+sobely = cv2.Sobel(img, cv2.CV_64F, 0, 1, ksize=5)
+
+plt.subplot(2, 2, 1), plt.imshow(img, cmap='gray')
+plt.title('Original'), plt.xticks([]), plt.yticks([])
+plt.subplot(2, 2, 2), plt.imshow(laplacian, cmap='gray')
+plt.title('Laplacian'), plt.xticks([]), plt.yticks([])
+plt.subplot(2, 2, 3), plt.imshow(sobelx, cmap='gray')
+plt.title('Sobel X'), plt.xticks([]), plt.yticks([])
+plt.subplot(2, 2, 4), plt.imshow(sobely, cmap='gray')
+plt.title('Sobel Y'), plt.xticks([]), plt.yticks([])
+plt.show()
+```
+
+## 4.7 Canny 边缘检测
+
+::: details 学习目标
+
+- 了解 Canny 边缘检测的概念
+- 函数
+    - `cv2.Canny()`
+
+:::
+
+## 4.8 图像金字塔
+
+::: details 学习目标
+
+- 学习图像金字塔
+- 使用图像创建一个新水果：“橘子苹果”
+- 函数
+    - `cv2.pyrUp()`
+    - `cv2.pyrDown()`
+
+:::
+
+Canny 边缘检测是一种非常流行的边缘检测算法，是 John F.Canny 在 1986 年提出的。它是一个有很多步构成的算法，我们接下来会逐步介绍。
+
+## 4.9 OpenCV 中的轮廓
 
 21.1 初识轮廓
 目标
@@ -1005,7 +1138,7 @@ OpenCV 中的 Canny 边缘检测
 现在我们要学习轮廓的层次结构了，比如轮廓之间的父子关系。
 
 
-## 22 直方图
+## 4.10 直方图
 
 22.1 直方图的计算，绘制与分析
 目标
@@ -1024,7 +1157,7 @@ OpenCV 中的 Canny 边缘检测
 本节我们将要学习直方图反向投影
 
 
-## 23 图像变换
+## 4.11 图像变换
 
 ### 23.1 傅里叶变换
 
@@ -1035,7 +1168,7 @@ OpenCV 中的 Canny 边缘检测
 • 傅里叶变换的一些用处
 • 我们将要学习的函数有：cv2.dft()，cv2.idft() 等
 
-## 24 模板匹配
+## 4.12 模板匹配
 
 学习目标
 - 使用模板匹配在一幅图像中查找目标
@@ -1050,9 +1183,7 @@ OpenCV 中的 Canny 边缘检测
 
 > 注意：如果你使用的比较方法是 `cv2.TM_SQDIFF`，最小值对应的位置才是匹配的区域。
 
-
-
-## 25 Hough 直线变换
+## 4.13 Hough 直线变换
 
 学习目标
 • 理解霍夫变换的概念
