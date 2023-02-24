@@ -1,6 +1,8 @@
 ---
 title: 第 1 章：OpenCV 入门
 description: 我们将学习人类的视觉系统，并安装 OpenCV，以及学习 OpenCV 能做什么
+routeMeta:
+  order: '01'
 ---
 
 # 1. OpenCV 入门

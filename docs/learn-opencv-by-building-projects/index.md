@@ -1,6 +1,6 @@
 ---
-title: OpenCV4 — 计算机视觉项目实战的目录
-description: OpenCV4 — 计算机视觉项目实战的目录
+title: OpenCV4 — 计算机视觉项目实战
+description: OpenCV4 — 计算机视觉项目实战
 ---
 
 # OpenCV4 — 计算机视觉项目实战
@@ -9,18 +9,7 @@ description: OpenCV4 — 计算机视觉项目实战的目录
 
 这里只是简短的笔记和概要，并不代表书的内容。
 
-1. [第 1 章](./chapter01/)
-2. [第 2 章](./chapter02/)
-3. [第 3 章](./chapter03/)
-4. [第 4 章](./chapter04/)
-5. [第 5 章](./chapter05/)
-6. [第 6 章](./chapter06/)
-7. [第 7 章](./chapter07/)
-8. [第 8 章](./chapter08/)
-9. [第 9 章](./chapter09/)
-10. [第 10 章](./chapter10/)
-11. [第 11 章](./chapter11/)
-12. [第 12 章](./chapter12/)
+<AutoCatalog :orderGetter="(meta) => meta.order" />
 
 本文记录所使用的 OpenCV 是 OpenCV 4.6.0，和书本不同。而且书本很多翻译问题和表述问题，在此也将做出一些修正。本文记录和原文可能不同的点：
 - OpenCV 版本是 4.6.0.66，而原书为 4.0.0，加入了很多新特性

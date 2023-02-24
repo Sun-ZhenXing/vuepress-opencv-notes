@@ -1,6 +1,8 @@
 ---
 title: 第 6 章：学习对象分类
 description: 本章我们将学习机器学习，然后使用机器学习对目标进行分类
+routeMeta:
+  order: '06'
 ---
 
 # 6. 学习对象分类
@@ -53,7 +55,7 @@ OpenCV 实现了其中八种机器学习算法，所有这些算法都继承自 
 - 随机梯度下降 SVM
 
 ```mermaid
-graph TD
+graph LR
     Algorithm(["cv::Algorithm"]) -->
     StatModel(["cv::ml::StatModel"]) -->
     ANN_MLP(["cv::ml::ANN_MLP"]) & DTrees(["cv::ml::DTrees"]) & EM(["cv::ml::EM"]) & KNearest(["cv::ml::KNearest"]) & LogisticRegression(["cv::ml::LogisticRegression"]) & NormalBayesClassifier(["cv::ml::NormalBayesClassifier"]) & SVM(["cv::ml::SVM"])

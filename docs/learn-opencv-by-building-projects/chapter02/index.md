@@ -1,6 +1,8 @@
 ---
 title: 第 2 章：OpenCV 基础知识导论
 description: 使用 CMake 构建项目，并了解 OpenCV 的基础数据结构和操作
+routeMeta:
+  order: '02'
 ---
 
 # 2. OpenCV 基础知识导论

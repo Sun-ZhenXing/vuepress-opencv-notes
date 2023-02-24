@@ -1,4 +1,8 @@
 ---
-title: 第 8 章
-description: 
+title: 第 8 章：视频监控、背景建模和形态学操作
+description: 本章我们将学习从视频中检测移动对象，并进行背景建模
+routeMeta:
+  order: '08'
 ---
+
+# 8. 视频监控、背景建模和形态学操作

@@ -1,6 +1,8 @@
 ---
 title: 第 12 章：使用 OpenCV 进行深度学习
 description: 本章我们将使用 OpenCV 的深度学习接口，并将其用于目标检测和人脸检测。
+routeMeta:
+  order: '12'
 ---
 
 # 12. 使用 OpenCV 进行深度学习
