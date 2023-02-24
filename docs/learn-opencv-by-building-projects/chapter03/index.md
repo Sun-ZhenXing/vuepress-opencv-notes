@@ -33,7 +33,7 @@ OpenCV 提供两种用户界面选项：
 
 ::: info 使用 Qt 支持的 OpenCV
 
-如果需要编译支持 Qt 的 OpenCV，请阅读 [编译 Qt 支持的 OpenCV](../../opencv-development-practice/complie-and-build-guide/)。
+如果需要编译支持 Qt 的 OpenCV，请阅读 [编译 Qt 支持的 OpenCV](../../opencv-development-practice/complie-and-build-guide/#_2-构建-qt-支持)。
 
 :::
 

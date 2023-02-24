@@ -55,23 +55,18 @@ export default defineUserConfig({
     ],
     sidebar: {
       '/learn-opencv-by-building-projects/': [
-        {
-          text: 'OpenCV4 计算机视觉项目实战笔记',
-          children: [
-            '/learn-opencv-by-building-projects/chapter01/',
-            '/learn-opencv-by-building-projects/chapter02/',
-            '/learn-opencv-by-building-projects/chapter03/',
-            '/learn-opencv-by-building-projects/chapter04/',
-            '/learn-opencv-by-building-projects/chapter05/',
-            '/learn-opencv-by-building-projects/chapter06/',
-            '/learn-opencv-by-building-projects/chapter07/',
-            '/learn-opencv-by-building-projects/chapter08/',
-            '/learn-opencv-by-building-projects/chapter09/',
-            '/learn-opencv-by-building-projects/chapter10/',
-            '/learn-opencv-by-building-projects/chapter11/',
-            '/learn-opencv-by-building-projects/chapter12/',
-          ]
-        }
+        '/learn-opencv-by-building-projects/chapter01/',
+        '/learn-opencv-by-building-projects/chapter02/',
+        '/learn-opencv-by-building-projects/chapter03/',
+        '/learn-opencv-by-building-projects/chapter04/',
+        '/learn-opencv-by-building-projects/chapter05/',
+        '/learn-opencv-by-building-projects/chapter06/',
+        '/learn-opencv-by-building-projects/chapter07/',
+        '/learn-opencv-by-building-projects/chapter08/',
+        '/learn-opencv-by-building-projects/chapter09/',
+        '/learn-opencv-by-building-projects/chapter10/',
+        '/learn-opencv-by-building-projects/chapter11/',
+        '/learn-opencv-by-building-projects/chapter12/',
       ],
       '/opencv-development-practice/': [
         {
@@ -132,7 +127,7 @@ export default defineUserConfig({
           }
         }
       ]
-    }),
+    }, false),
     searchProPlugin({}),
     autoCatalogPlugin({}),
     copyCodePlugin({
