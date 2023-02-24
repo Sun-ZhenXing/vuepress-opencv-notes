@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-7ce29625","path":"/awesome/","title":"OpenCV Awesome 项目","lang":"zh-CN","frontmatter":{"title":"OpenCV Awesome 项目","description":"OpenCV Awesome 项目"},"headers":[],"git":{"updatedTime":1673700624000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"awesome/index.md","excerpt":""}');export{e as data};
