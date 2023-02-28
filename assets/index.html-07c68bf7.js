@@ -1,0 +1,1 @@
+import{_ as o,M as r,p as n,q as a,N as c}from"./framework-546207d5.js";const l={};function _(s,d){const e=r("AutoCatalog");return n(),a("div",null,[c(e,{orderGetter:t=>t.order},null,8,["orderGetter"])])}const u=o(l,[["render",_],["__file","index.html.vue"]]);export{u as default};
