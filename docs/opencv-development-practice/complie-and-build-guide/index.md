@@ -7,7 +7,44 @@ description: 使用 C++ 版本的 OpenCV 的编译指南
 
 ## 1. 基本编译指南
 
-需要预先安装编译依赖。
+下面都以 OpenCV 4.7.0 的编译为例。下载源代码 [`opencv-4.7.0.zip`](https://github.com/opencv/opencv/releases) 和 [`opencv_contrib-4.7.0.zip`](https://github.com/opencv/opencv_contrib/tags)，解压到同一个文件夹。
+
+::: code-tabs
+
+@tab Linux
+
+```bash
+curl -Lj -o opencv-4.7.0.zip https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
+curl -Lj -o opencv_contrib-4.7.0.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip
+unzip opencv-4.7.0.zip -d .
+unzip opencv_contrib-4.7.0.zip -d .
+cd opencv-4.7.0
+mkdir -p build
+```
+
+@tab Windows
+
+```bash
+curl -Lj -o opencv-4.7.0.zip https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
+curl -Lj -o opencv_contrib-4.7.0.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip
+7z x opencv-4.7.0.zip
+7z x opencv_contrib-4.7.0.zip
+cd opencv-4.7.0
+md build
+```
+
+:::
+
+需要预先安装编译依赖，Windows 系统见下文。例如 Ubuntu 的基本依赖为：
+
+```bash
+sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
+    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
+    libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
+    gfortran openexr libatlas-base-dev python3-dev python3-numpy \
+    libtbb2 libtbb-dev libdc1394-22-dev libopenexr-dev \
+    libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+```
 
 CMake 配置：
 
@@ -30,10 +67,10 @@ sudo make install
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local/opencv460 \
+    -D CMAKE_INSTALL_PREFIX=/usr/local/opencv470 \
     -D INSTALL_C_EXAMPLE=OFF \
     -D BUILD_EXAMPLE=OFF \
-    -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.6.0/modules \
+    -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.7.0/modules \
     -D WITH_V4L=ON \
     -D WITH_TBB=ON \
     -D WITH_VTK=ON \
@@ -44,3 +81,90 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_opencv_python3=OFF \
     -D BUILD_TIFF=ON ..
 ```
+
+## 3. Windows 编译指南
+
+Windows 编译要求：
+- Visual Studio 2019，并安装 C++ 桌面开发基本组件
+- CMake GUI 版本，也可以完全使用命令行
+
+在配置过程中将会自动下载依赖。
+
+建议配置项：
+- CUDA 支持，如果安装了 CUDA 可选择支持，不过需要选择你的显卡对应的算力
+- `BUILD_opencv_world` 编译包含所有库的动态链接库
+- Test 选项可去除
+- Python/Java/JS 选项去除
+
+::: info 使用代理
+
+使用大陆的网络可能无法下载依赖，需要使用代理。在 Environment 中增加 `http_proxy` 和 `https_proxy` 变量，并将其指定为一个可用的代理地址。例如：
+
+```yml
+http_proxy: 'http://127.0.0.1:10809'
+https_proxy: 'socks5://127.0.0.1:10808'
+```
+
+在 Windows 上，Python 可能对 SOCKS 支持不完备，如果使用 SOCKS 协议时出现无法握手或者无法使用 DNS，将 `https_proxy` 代替为 `http_proxy` 的值即可：
+
+```yml
+http_proxy: 'http://127.0.0.1:10809'
+https_proxy: 'http://127.0.0.1:10809'
+```
+
+:::
+
+::: details 命令行编译指南
+
+```bash
+cmake -G "Visual Studio 16 2019" -T host=x64 -A x64 ^
+    -DBUILD_DOCS=OFF ^
+    -DBUILD_SHARED_LIBS=ON ^
+    -DBUILD_FAT_JAVA_LIB=OFF ^
+    -DBUILD_TESTS=OFF ^
+    -DBUILD_TIFF=ON ^
+    -DBUILD_JASPER=ON ^
+    -DBUILD_JPEG=ON ^
+    -DBUILD_PNG=ON ^
+    -DBUILD_ZLIB=ON ^
+    -DBUILD_OPENEXR=OFF ^
+    -DBUILD_opencv_apps=OFF ^
+    -DBUILD_opencv_calib3d=OFF ^
+    -DBUILD_opencv_contrib=OFF ^
+    -DBUILD_opencv_features2d=OFF ^
+    -DBUILD_opencv_flann=OFF ^
+    -DBUILD_opencv_gpu=OFF ^
+    -DBUILD_opencv_java=OFF ^
+    -DBUILD_opencv_legacy=OFF ^
+    -DBUILD_opencv_ml=OFF ^
+    -DBUILD_opencv_nonfree=OFF ^
+    -DBUILD_opencv_objdetect=OFF ^
+    -DBUILD_opencv_ocl=OFF ^
+    -DBUILD_opencv_photo=OFF ^
+    -DBUILD_opencv_python=OFF ^
+    -DBUILD_opencv_stitching=OFF ^
+    -DBUILD_opencv_superres=OFF ^
+    -DBUILD_opencv_ts=OFF ^
+    -DBUILD_opencv_video=OFF ^
+    -DBUILD_opencv_videostab=OFF ^
+    -DBUILD_opencv_world=ON ^
+    -DBUILD_opencv_lengcy=OFF ^
+    -DBUILD_opencv_lengcy=OFF ^
+    -DWITH_1394=OFF ^
+    -DWITH_EIGEN=OFF ^
+    -DWITH_FFMPEG=OFF ^
+    -DWITH_GIGEAPI=OFF ^
+    -DWITH_GSTREAMER=OFF ^
+    -DWITH_GTK=OFF ^
+    -DWITH_PVAPI=OFF ^
+    -DWITH_V4L=OFF ^
+    -DWITH_LIBV4L=OFF ^
+    -DWITH_CUDA=OFF ^
+    -DWITH_CUFFT=OFF ^
+    -DWITH_OPENCL=OFF ^
+    -DWITH_OPENCLAMDBLAS=OFF ^
+    -DWITH_OPENCLAMDFFT=OFF ..
+cmake --build . --config Release --target ALL_BUILD -j 20 --
+```
+
+:::
