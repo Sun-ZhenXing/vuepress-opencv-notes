@@ -618,6 +618,18 @@ OpenCV 支持使用 XML/YAML 来存储和读取数据。
 
 要把一些 OpenCV 或其他数值写入文件，可以使用 `FileStorage` 类，同时要使用流运算符 `<<` 来操作 STL 流：
 
+如果需要保存文件，只需要使用 `cv::FileStorage` 来储存：
+
+```cpp
+cv::FileStorage fs("test.yml", cv::FileStorage::WRITE);
+int fps = 5;
+fs << "fps" << fps;
+```
+
+使用流输出结果即可。
+
+下面是示例代码：
+
 ```cpp
 #include <iostream>
 #include <opencv2/core.hpp>
@@ -655,6 +667,8 @@ Result: !!opencv-matrix
 ```
 
 ### 读取文件
+
+使用 `cv::FileStorage::READ` 来读取 YAML 文件的内容。
 
 ```cpp
 #include <iostream>

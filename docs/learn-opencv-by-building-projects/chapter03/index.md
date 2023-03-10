@@ -149,7 +149,7 @@ cmake --build ./build --config Release --target ALL_BUILD -j 4 --
 
 我们下面实现一个功能：鼠标可以绘制绿色圆圈，使用滑块进行模糊处理。
 
-```c++
+```cpp
 
 ```
 
