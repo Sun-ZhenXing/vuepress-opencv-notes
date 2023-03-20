@@ -1,8 +1,3 @@
----
-title: OpenCV 部署快速风格迁移
-description: OpenCV 部署快速风格迁移
----
-
 # OpenCV 部署快速风格迁移
 
 [[TOC]]

@@ -1,8 +1,3 @@
----
-title: OpenCV4 — 计算机视觉项目实战
-description: OpenCV4 — 计算机视觉项目实战
----
-
 # OpenCV4 — 计算机视觉项目实战
 
 书中的源代码：[GitHub](https://github.com/PacktPublishing/Learn-OpenCV-4-By-Building-Projects-Second-Edition)。

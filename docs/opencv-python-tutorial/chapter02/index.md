@@ -1,8 +1,3 @@
----
-title: 第 2 章：OpenCV 中的 GUI 特性
-description: 介绍 OpenCV 的 GUI 功能
----
-
 # 2. OpenCV 中的 GUI 特性
 
 [[TOC]]

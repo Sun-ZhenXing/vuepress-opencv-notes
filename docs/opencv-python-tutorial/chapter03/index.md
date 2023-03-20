@@ -1,8 +1,3 @@
----
-title: 第 3 章：核心操作
-description: OpenCV 中的核心操作
----
-
 # 3. 核心操作
 
 [[TOC]]

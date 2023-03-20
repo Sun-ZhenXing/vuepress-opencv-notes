@@ -1,8 +1,3 @@
----
-title: OpenCV 和 YOLOv8 进行实例分割
-description: OpenCV 和 YOLOv8 进行实例分割
----
-
 # OpenCV 和 YOLOv8 进行实例分割
 
 [[TOC]]

@@ -1,8 +1,3 @@
----
-title: OpenCV C++ 编译和构建指南
-description: 使用 C++ 版本的 OpenCV 的编译指南
----
-
 # OpenCV C++ 编译和构建指南
 
 ## 1. 基本编译指南

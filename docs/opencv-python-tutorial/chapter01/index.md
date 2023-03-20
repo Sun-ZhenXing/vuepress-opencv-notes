@@ -1,8 +1,3 @@
----
-title: 第 1 章：安装 OpenCV
-description: 在不同的系统上安装 Python 版本的 OpenCV
----
-
 # 1. 安装 OpenCV
 
 [[TOC]]

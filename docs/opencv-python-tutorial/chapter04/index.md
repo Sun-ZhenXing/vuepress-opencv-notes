@@ -1,8 +1,3 @@
----
-title: 第 4 章：OpenCV 中的图像处理
-description: OpenCV 中的图像处理
----
-
 # 4. OpenCV 中的图像处理
 
 ## 4.1 颜色空间转换

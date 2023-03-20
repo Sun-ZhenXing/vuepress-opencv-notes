@@ -1,8 +1,3 @@
----
-title: OpenCV 使用 CMake 构建跨平台应用
-description: 
----
-
 # OpenCV 使用 CMake 构建跨平台应用
 
 ## 1. 定义标准化的工具

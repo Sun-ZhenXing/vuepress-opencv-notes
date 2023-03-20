@@ -1,8 +1,3 @@
----
-title: OpenCV Windows 错误合集
-description: OpenCV 调试过程中在 Windows 平台上出现的错误
----
-
 ## 调用摄像头时出现错误
 
 ### VSFilter.dll 非法地址访问
