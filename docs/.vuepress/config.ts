@@ -180,7 +180,16 @@ export default defineUserConfig({
         },
       },
     }),
-    autoCatalogPlugin({}),
+    autoCatalogPlugin({
+      orderGetter: (page) => {
+        const number = page.title.match(/\d+/)
+        if (number) {
+          return +number[0];
+        } else {
+          return 0;
+        }
+      }
+    }),
     copyCodePlugin({
       showInMobile: true
     })
