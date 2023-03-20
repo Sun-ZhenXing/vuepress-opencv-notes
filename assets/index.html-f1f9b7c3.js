@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-18ed3ccf","path":"/theoretical-basis/","title":"理论基础","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679278763000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"theoretical-basis/index.md"}');export{e as data};

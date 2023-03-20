@@ -1,0 +1,1 @@
+import{_ as t,p as n,q as a,R as e,t as c}from"./framework-546207d5.js";const s={},o=e("h1",{id:"opencv-ps-操作替代指南",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#opencv-ps-操作替代指南","aria-hidden":"true"},"#"),c(" OpenCV PS 操作替代指南")],-1),r=[o];function _(d,i){return n(),a("div",null,r)}const l=t(s,[["render",_],["__file","index.html.vue"]]);export{l as default};
