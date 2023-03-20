@@ -15,4 +15,4 @@ features:
 footer: OpenCV 笔记合集，由 @Sun-ZhenXing 创建
 ---
 
-<AutoCatalog :orderGetter="(meta) => meta.order" />
+<AutoCatalog />

@@ -4,7 +4,7 @@
 
 这里只是简短的笔记和概要，并不代表书的内容。
 
-<AutoCatalog :orderGetter="(meta) => meta.order" />
+<AutoCatalog />
 
 本文记录所使用的 OpenCV 是 OpenCV 4.6.0，和书本不同。而且书本很多翻译问题和表述问题，在此也将做出一些修正。本文记录和原文可能不同的点：
 - OpenCV 版本是 4.6.0.66，而原书为 4.0.0，加入了很多新特性
