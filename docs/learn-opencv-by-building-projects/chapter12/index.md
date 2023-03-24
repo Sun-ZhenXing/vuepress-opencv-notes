@@ -222,4 +222,6 @@ int main(int argc, char* argv[]) {
 
 本文的 SSD 模型使用 Caffe 格式，需要 OpenCV 使用 `cv::dnn::readNetFromCaffe()` 来创建网络。
 
+@[code cpp](./src/ssd_face.cpp)
+
 ## 12.6 总结
