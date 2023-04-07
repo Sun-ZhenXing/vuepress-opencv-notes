@@ -1,3 +1,3 @@
-# Python OpenCV 边缘检测
+# Python OpenCV 目标分割
 
 @[code python](./src/main.py)
