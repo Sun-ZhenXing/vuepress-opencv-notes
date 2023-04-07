@@ -16,3 +16,7 @@ footer: OpenCV 笔记合集，由 @Sun-ZhenXing 创建
 ---
 
 <AutoCatalog />
+
+## 测试图片
+
+![](/lena.bmp)
