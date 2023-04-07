@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-20015dcb","path":"/awesome/python-object-segmentation/","title":"Python OpenCV 目标分割","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680837525000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"awesome/python-object-segmentation/index.md"}');export{e as data};

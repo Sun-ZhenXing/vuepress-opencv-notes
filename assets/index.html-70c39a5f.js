@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-51f2ed1e","path":"/learn-opencv-by-building-projects/chapter08/","title":"8. 视频监控、背景建模和形态学操作","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680836723000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":4}]},"filePathRelative":"learn-opencv-by-building-projects/chapter08/index.md"}');export{e as data};
