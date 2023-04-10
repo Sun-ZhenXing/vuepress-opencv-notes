@@ -24,7 +24,7 @@ export default defineUserConfig({
   base: BASE_PATH,
   markdown: {
     code: {
-      lineNumbers: 10
+      lineNumbers: 20
     }
   },
   theme: defaultTheme({
@@ -34,6 +34,9 @@ export default defineUserConfig({
     editLinkText: '在 GitHub 上编辑此页',
     contributorsText: '贡献者',
     lastUpdatedText: '上次更新',
+    openInNewWindow: '在新窗口打开',
+    toggleColorMode: '切换深色模式',
+    toggleSidebar: '切换侧边栏',
     navbar: [
       {
         text: '合集',
