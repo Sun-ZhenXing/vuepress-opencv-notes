@@ -3,7 +3,7 @@ home: true
 heroImage: /favicon.svg
 actions:
   - text: 开始阅读
-    link: /learn-opencv-by-building-projects/
+    link: '#opencv-笔记合集'
     type: primary
 features:
   - title: 深入浅出
@@ -15,8 +15,12 @@ features:
 footer: OpenCV 笔记合集，由 @Sun-ZhenXing 创建
 ---
 
+# OpenCV 笔记合集
+
 <AutoCatalog />
 
-## 测试图片
+::: tip 保存的资源
 
-![](./assets/lena.png)
+[Lena 图片](./lena.png)
+
+:::
