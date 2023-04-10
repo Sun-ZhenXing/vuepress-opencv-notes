@@ -24,7 +24,7 @@ export default defineUserConfig({
   base: BASE_PATH,
   markdown: {
     code: {
-      lineNumbers: 20
+      lineNumbers: 10
     }
   },
   theme: defaultTheme({

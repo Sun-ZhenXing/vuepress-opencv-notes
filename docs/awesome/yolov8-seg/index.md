@@ -1,4 +1,4 @@
-# OpenCV 和 YOLOv8 进行实例分割
+# 使用 YOLOv8 进行实例分割
 
 [[TOC]]
 
@@ -39,4 +39,6 @@ pip install opencv-python
 
 生成结果：
 
-![](./images/res.jpg)
+![](./images/res_rugby.jpg)
+
+![](./images/res_basket.jpg)
