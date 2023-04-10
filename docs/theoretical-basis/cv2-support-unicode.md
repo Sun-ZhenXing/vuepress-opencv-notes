@@ -10,7 +10,7 @@ C++ OpenCV 可以通过对应平台的编码来解决这个问题，但是 Pytho
 
 ```python
 import cv2
-import  numpy as np
+import numpy as np
  
 def cv_imread(path: str, flags=cv2.IMREAD_COLOR):
     cv_img = cv2.imdecode(np.fromfile(path, dtype=np.uint8), flags)
