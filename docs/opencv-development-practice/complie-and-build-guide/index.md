@@ -163,3 +163,66 @@ cmake --build . --config Release --target ALL_BUILD -j 20 --
 ```
 
 :::
+
+## 4. OpenCV CUDA 编译指南
+
+下面进行一份完整的 CUDA 支持的 OpenCV 编译过程，以 Windows 和 OpenCV 4.7.0 为例。
+
+下面我的机器配置，请根据条件选择合适的配置项目：
+
+| 配置项 | 值                            |
+| ------ | ----------------------------- |
+| CPU    | Intel(R) Core(TM) i9-12900H   |
+| GPU    | NVIDIA RTX 3070 Ti Laptop GPU |
+| 显存   | 8 GB                          |
+| 内存   | 16 GB                         |
+| CUDA   | 12.1                          |
+| VS     | Visual Studio 2019 Community  |
+
+打开 CMake-GUI，然后选择源码和编译目录。
+
+配置 Environment，设置 `http_proxy` 和 `https_proxy` 为代理地址。
+
+```yml
+http_proxy: 'http://127.0.0.1:10809'
+https_proxy: 'http://127.0.0.1:10809'
+```
+
+点击 Configure，选择 Visual Studio 2019，然后点击 Finish。
+
+第一次可选配置项：
+
+| 配置项                                 | 值                                                         | 说明                                     |
+| -------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
+| `OPENCV_GENERATE_SETUPVARS`            | `OFF`                                                      | 为了防止 `OpenCVGenSetupVars` 警告       |
+| `BUILD_CUDA_STUBS`                     | `OFF`                                                      | CUDA 桩库                                |
+| `WITH_CUDA`                            | `ON`                                                       | CUDA                                     |
+| `OPENCV_DNN_CUDA`                      | `ON`                                                       | CUDA DNN                                 |
+| `ENABLE_FAST_MATH`                     | `ON`                                                       | 快速数学库                               |
+| `BUILD_JAVA`                           | `OFF`                                                      | Java 绑定                                |
+| `BUILD_opencv_java_bindings_generator` | `OFF`                                                      | Java 绑定生成器                          |
+| `OPENCV_EXTRA_MODULES_PATH`            | `D:/workspace/repo/opencv4.7/opencv_contrib-4.7.0/modules` | 额外模块路径，选择自己的下载位置         |
+| `OPENCV_ENABLE_NONFREE`                | `ON`                                                       | 非自由组件                               |
+| `BUILD_opencv_js`                      | `OFF`                                                      | JS 绑定                                  |
+| `BUILD_opencv_js_bindings_generator`   | `OFF`                                                      | JS 绑定生成器                            |
+| `BUILD_opencv_objc_bindings_generator` | `OFF`                                                      | Objective-C 绑定生成器                   |
+| `BUILD_opencv_world`                   | `ON`                                                       | 编译包含所有库的动态链接库               |
+| `BUILD_SHARED_LIBS`                    | `ON`                                                       | 编译动态链接库，如果需要静态库请不要勾选 |
+
+根据需要选择即可，点击 Configure。
+
+查看显卡算力可以在 [NVIDIA 开发者官网](https://developer.nvidia.com/cuda-gpus#compute) 的算力表，在 **CUDA-Enabled GeForce and TITAN Products** 一栏可以看到 GeForce 系列的算力，例如 RTX 3070 Ti Laptop GPU 的算力为 8.6。
+
+第二次可选配置项：
+
+| 配置项           | 值        | 说明                                |
+| ---------------- | --------- | ----------------------------------- |
+| `CUDA_FAST_MATH` | `ON`      | 快速数学库                          |
+| `CUDA_ARCH_BIN`  | `7.5;8.6` | 显卡算力，此值兼容 20/30 系多数显卡 |
+| `WITH_FREETYPE`  | `OFF`     | FreeType 字体库                     |
+
+点击 Configure，然后点击 Generate。此时将生成 Visual Studio 2019 的解决方案。
+
+打开 `OpenCV.sln`，然后选择 Release 模式，右键 `ALL_BUILD`，然后选择生成。
+
+生成完成后，右键 `INSTALL`，然后选择生成。
