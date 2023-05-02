@@ -1,1 +1,0 @@
-import{_ as t,p as a,q as c,R as e,t as n}from"./framework-35c50e38.js";const r={},s=e("h1",{id:"_8-视频监控、背景建模和形态学操作",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_8-视频监控、背景建模和形态学操作","aria-hidden":"true"},"#"),n(" 8. 视频监控、背景建模和形态学操作")],-1),_=[s];function o(d,i){return a(),c("div",null,_)}const l=t(r,[["render",o],["__file","index.html.vue"]]);export{l as default};
