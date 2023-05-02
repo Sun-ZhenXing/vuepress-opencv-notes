@@ -192,22 +192,27 @@ https_proxy: 'http://127.0.0.1:10809'
 
 第一次可选配置项：
 
-| 配置项                                 | 值                                                         | 说明                                     |
-| -------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
-| `OPENCV_GENERATE_SETUPVARS`            | `OFF`                                                      | 为了防止 `OpenCVGenSetupVars` 警告       |
-| `BUILD_CUDA_STUBS`                     | `OFF`                                                      | CUDA 桩库                                |
-| `WITH_CUDA`                            | `ON`                                                       | CUDA                                     |
-| `OPENCV_DNN_CUDA`                      | `ON`                                                       | CUDA DNN                                 |
-| `ENABLE_FAST_MATH`                     | `ON`                                                       | 快速数学库                               |
-| `BUILD_JAVA`                           | `OFF`                                                      | Java 绑定                                |
-| `BUILD_opencv_java_bindings_generator` | `OFF`                                                      | Java 绑定生成器                          |
-| `OPENCV_EXTRA_MODULES_PATH`            | `D:/workspace/repo/opencv4.7/opencv_contrib-4.7.0/modules` | 额外模块路径，选择自己的下载位置         |
-| `OPENCV_ENABLE_NONFREE`                | `ON`                                                       | 非自由组件                               |
-| `BUILD_opencv_js`                      | `OFF`                                                      | JS 绑定                                  |
-| `BUILD_opencv_js_bindings_generator`   | `OFF`                                                      | JS 绑定生成器                            |
-| `BUILD_opencv_objc_bindings_generator` | `OFF`                                                      | Objective-C 绑定生成器                   |
-| `BUILD_opencv_world`                   | `ON`                                                       | 编译包含所有库的动态链接库               |
-| `BUILD_SHARED_LIBS`                    | `ON`                                                       | 编译动态链接库，如果需要静态库请不要勾选 |
+| 配置项                                   | 值                                                         | 说明                                     |
+| ---------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
+| `OPENCV_GENERATE_SETUPVARS`              | `OFF`                                                      | 为了防止 `OpenCVGenSetupVars` 警告       |
+| `BUILD_CUDA_STUBS`                       | `OFF`                                                      | CUDA 桩库                                |
+| `WITH_CUDA`                              | `ON`                                                       | CUDA                                     |
+| `OPENCV_DNN_CUDA`                        | `ON`                                                       | CUDA DNN                                 |
+| `ENABLE_FAST_MATH`                       | `ON`                                                       | 快速数学库                               |
+| `BUILD_JAVA`                             | `OFF`                                                      | Java 绑定                                |
+| `BUILD_opencv_java_bindings_generator`   | `OFF`                                                      | Java 绑定生成器                          |
+| `OPENCV_EXTRA_MODULES_PATH`              | `D:/workspace/repo/opencv4.7/opencv_contrib-4.7.0/modules` | 额外模块路径，选择自己的下载位置         |
+| `OPENCV_ENABLE_NONFREE`                  | `ON`                                                       | 非自由组件                               |
+| `BUILD_opencv_js`                        | `OFF`                                                      | JS 绑定                                  |
+| `BUILD_opencv_js_bindings_generator`     | `OFF`                                                      | JS 绑定生成器                            |
+| `BUILD_opencv_python3`                   | `OFF`                                                      | Python3 绑定                             |
+| `BUILD_opencv_python_bindings_generator` | `OFF`                                                      | Python3 绑定生成器                       |
+| `BUILD_opencv_python_tests`              | `OFF`                                                      | Python3 绑定测试                         |
+| `BUILD_opencv_objc_bindings_generator`   | `OFF`                                                      | Objective-C 绑定生成器                   |
+| `BUILD_opencv_world`                     | `ON`                                                       | 编译包含所有库的动态链接库               |
+| `BUILD_SHARED_LIBS`                      | `ON`                                                       | 编译动态链接库，如果需要静态库请不要勾选 |
+
+如果需要 Python 绑定，则安装过程中将自动替换当前 Python 安装的 OpenCV，请谨慎选择。
 
 根据需要选择即可，点击 Configure。
 
@@ -223,6 +228,8 @@ https_proxy: 'http://127.0.0.1:10809'
 
 点击 Configure，然后点击 Generate。此时将生成 Visual Studio 2019 的解决方案。
 
-打开 `OpenCV.sln`，然后选择 Release 模式，右键 `ALL_BUILD`，然后选择生成。
+打开 `OpenCV.sln`，然后选择 Release 模式，右键资源管理器中的 `ALL_BUILD` 项目，然后选择生成。
 
-生成完成后，右键 `INSTALL`，然后选择生成。
+此过程较长，请耐心等待，如果没有显示错误则生成成功。成功后右键 `INSTALL` 项目，然后选择生成。
+
+生成目标默认安装在项目的 `install` 目录下，可以在 CMake-GUI 中修改。
