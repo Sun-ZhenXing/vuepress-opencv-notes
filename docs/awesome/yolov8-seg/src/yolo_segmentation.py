@@ -3,17 +3,14 @@ import numpy as np
 from ultralytics import YOLO
 from ultralytics.yolo.engine.results import Results
 
+
 class YOLOSegmentation:
     def __init__(self, model_path: str):
         self.model = YOLO(model_path)
 
     def detect(self, img: np.ndarray):
         height, width, _ = img.shape
-        results = self.model.predict(
-            source=img.copy(),
-            save=False,
-            save_txt=False
-        )
+        results = self.model.predict(source=img.copy(), save=False, save_txt=False)
         result: Results = results[0]
         segmentation_contours_idx = []
         for seg in result.masks.segments:

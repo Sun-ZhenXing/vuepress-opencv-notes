@@ -33,26 +33,24 @@ def threshold(img: np.ndarray):
     # 图像灰度化
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # 阈值分割
-    ret, binary = cv2.threshold(
-        gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU
-    )
+    ret, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
     return binary
 
 
 def main():
-    img = cv2.imread('test.png')
-    cv2.imshow('img', img)
+    img = cv2.imread("test.png")
+    cv2.imshow("img", img)
     # 聚类分割
     res_cluster = cluster(img, 3)
     # 显示图像
-    cv2.imshow('res', res_cluster)
+    cv2.imshow("res", res_cluster)
     # 阈值分割
     res_threshold = threshold(img)
-    cv2.imshow('res2', res_threshold)
+    cv2.imshow("res2", res_threshold)
     # 等待显示
     cv2.waitKey()
     cv2.destroyAllWindows()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

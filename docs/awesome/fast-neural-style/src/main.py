@@ -22,24 +22,24 @@ def process(image_path: str, model_path: str):
 
 
 model_list = [
-    './models/eccv16/composition_vii.t7',
-    './models/eccv16/la_muse.t7',
-    './models/eccv16/starry_night.t7',
-    './models/eccv16/the_wave.t7',
-    './models/instance_norm/candy.t7',
-    './models/instance_norm/feathers.t7',
-    './models/instance_norm/la_muse.t7',
-    './models/instance_norm/mosaic.t7',
-    './models/instance_norm/the_scream.t7',
-    './models/instance_norm/udnie.t7',
+    "./models/eccv16/composition_vii.t7",
+    "./models/eccv16/la_muse.t7",
+    "./models/eccv16/starry_night.t7",
+    "./models/eccv16/the_wave.t7",
+    "./models/instance_norm/candy.t7",
+    "./models/instance_norm/feathers.t7",
+    "./models/instance_norm/la_muse.t7",
+    "./models/instance_norm/mosaic.t7",
+    "./models/instance_norm/the_scream.t7",
+    "./models/instance_norm/udnie.t7",
 ]
 
-if __name__ == '__main__':
-    image_path = 'test.jpg'
+if __name__ == "__main__":
+    image_path = "test.jpg"
     for model_path in model_list:
         out = process(image_path, model_path)
         print(model_path)
-        cv2.imshow('out', out)
+        cv2.imshow("out", out)
         key = cv2.waitKey()
         if key == 27:
             break
