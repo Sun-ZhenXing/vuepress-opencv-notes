@@ -1,4 +1,3 @@
-# https://pysource.com/2023/02/21/yolo-v8-segmentation
 import numpy as np
 from ultralytics import YOLO
 from ultralytics.yolo.engine.results import Results
@@ -13,7 +12,7 @@ class YOLOSegmentation:
         results = self.model.predict(source=img.copy(), save=False, save_txt=False)
         result: Results = results[0]
         segmentation_contours_idx = []
-        for seg in result.masks.segments:
+        for seg in result.masks.xyn:
             # contours
             seg[:, 0] *= width
             seg[:, 1] *= height
