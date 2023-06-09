@@ -1,19 +1,21 @@
 # VuePress OpenCV Notes | OpenCV 笔记
 
-![](https://img.shields.io/github/actions/workflow/status/Sun-ZhenXing/vuepress-opencv-notes/deploy-docs.yml?branch=main)
+![actions status](https://img.shields.io/github/actions/workflow/status/Sun-ZhenXing/vuepress-opencv-notes/deploy-docs.yml?branch=main)
 
-🚀 [Online Reading](https://blog.alexsun.top/vuepress-opencv-notes/) | [在线阅读](https://blog.alexsun.top/vuepress-opencv-notes/).
+🚀 [Online Reading | 在线阅读](https://blog.alexsun.top/vuepress-opencv-notes/).
+
+## 📝 Introduction | 介绍
+
+This is a note for learning OpenCV. | 这是一个学习 OpenCV 的笔记。
 
 ## 🛠️ Build Docs | 构建文档
 
-Build with `pnpm` | 使用 `pnpm` 构建:
+Build with `pnpm`, the content will be generated in `docs/.vuepress/dist`. | 使用 `pnpm` 构建， 内容将生成在 `docs/.vuepress/dist` 下:
 
 ```bash
 pnpm i
 pnpm build
 ```
-
-The content will be generated in `docs/.vuepress/dist`. | 内容将生成在 `docs/.vuepress/dist` 下。
 
 Build with Docker | 使用 Docker 构建:
 

@@ -5,6 +5,7 @@ import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
 import { autoCatalogPlugin } from 'vuepress-plugin-auto-catalog'
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 
 const __dirname = getDirname(import.meta.url)
 const isProd = process.env.NODE_ENV === 'production'
@@ -17,13 +18,6 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'OpenCV 笔记合集',
   description: '使用 C++ 和 Python 编写现代 OpenCV 应用',
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-      title: 'OpenCV 笔记合集',
-      description: '使用 C++ 和 Python 编写现代 OpenCV 应用',
-    }
-  },
   head: [
     ['link', { rel: 'icon', href: `${BASE_PATH}favicon.svg` }]
   ],
@@ -121,6 +115,8 @@ export default defineUserConfig({
         resolvePath: file => {
           if (file.startsWith('@'))
             return file.replace('@', CURRENT_PATH)
+          if (file.startsWith('/'))
+            return file.replace(/^\//, ROOT_PATH.replace(/(?:|\\|\/)$/, '/'))
           return file
         },
       },
@@ -132,7 +128,9 @@ export default defineUserConfig({
       mark: true,
       imgLazyload: true,
       tasklist: true,
-      katex: true,
+      katex: {
+        copy: true,
+      },
       mermaid: true,
       delay: 200,
       stylize: [
@@ -212,17 +210,21 @@ export default defineUserConfig({
     }),
     autoCatalogPlugin({
       orderGetter: ({ title, routeMeta }) => {
-        if (routeMeta.order) return routeMeta.order as number
+        if (routeMeta.order)
+          return routeMeta.order as number
         const prefix = title.match(/^\d+. /)
-        if (prefix) return parseInt(prefix[0])
+        if (prefix)
+          return parseInt(prefix[0])
         const suffix = title.match(/\d+$/)
-        if (suffix) return parseInt(suffix[0])
+        if (suffix)
+          return parseInt(suffix[0])
         return 0
-      }
+      },
     }),
     copyCodePlugin({
       showInMobile: true,
     }),
+    shikiPlugin({ theme: 'dark-plus' }),
   ],
   alias: {
     '@': CURRENT_PATH,
