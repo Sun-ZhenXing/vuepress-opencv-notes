@@ -1,1 +1,0 @@
-import{_ as t,o as a,c,b as e,d as n}from"./app-b3e40293.js";const o={},r=e("h1",{id:"_8-视频监控、背景建模和形态学操作",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_8-视频监控、背景建模和形态学操作","aria-hidden":"true"},"#"),n(" 8. 视频监控、背景建模和形态学操作")],-1),s=[r];function _(d,i){return a(),c("div",null,s)}const l=t(o,[["render",_],["__file","index.html.vue"]]);export{l as default};

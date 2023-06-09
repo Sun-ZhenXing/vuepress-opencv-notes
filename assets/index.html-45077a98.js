@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as a,b as e,d as c}from"./app-e045e1fd.js";const r={},n=e("h1",{id:"_11-用-tesseract-进行文本识别",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_11-用-tesseract-进行文本识别","aria-hidden":"true"},"#"),c(" 11. 用 Tesseract 进行文本识别")],-1),o=[n];function _(d,i){return s(),a("div",null,o)}const l=t(r,[["render",_],["__file","index.html.vue"]]);export{l as default};
