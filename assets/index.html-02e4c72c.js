@@ -1,1 +1,0 @@
-import{_ as t,o as a,c,b as e,d as n}from"./app-e045e1fd.js";const o={},r=e("h1",{id:"_10-开发用于文本识别的分割算法",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_10-开发用于文本识别的分割算法","aria-hidden":"true"},"#"),n(" 10. 开发用于文本识别的分割算法")],-1),s=[r];function _(d,i){return a(),c("div",null,s)}const l=t(o,[["render",_],["__file","index.html.vue"]]);export{l as default};

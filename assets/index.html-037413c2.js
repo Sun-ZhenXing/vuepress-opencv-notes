@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-51f2efe7","path":"/learn-opencv-by-building-projects/chapter10/","title":"10. 开发用于文本识别的分割算法","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1699330348000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":5}]},"filePathRelative":"learn-opencv-by-building-projects/chapter10/index.md"}');export{e as data};
