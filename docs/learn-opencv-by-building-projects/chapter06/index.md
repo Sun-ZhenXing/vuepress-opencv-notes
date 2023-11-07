@@ -1,8 +1,13 @@
 # 6. 学习对象分类
 
+<!-- markdownlint-disable MD045 -->
+
+[[TOC]]
+
 本章介绍机器学习的基本概念，以便对不同的图像进行分类。对于检测到的对象，我们使用机器学习算法提取被分类对象的不同特征。基于上一章的分割算法，创建 GUI 程序显示分类结果。
 
 本章介绍以下主题：
+
 - [x] 机器学习概念介绍
 - [x] 常见机器学习算法和过程
 - [x] 特征提取
@@ -26,6 +31,7 @@
 下面我们将使用监督学习和分类算法，这需要使用带有标签的数据集来训练模型。
 
 下面是一些比较流行的方法：
+
 - 支持向量机（SVM）
 - 人工神经网络（ANN）
 - 聚类
@@ -38,6 +44,7 @@
 ### OpenCV 机器学习算法
 
 OpenCV 实现了其中八种机器学习算法，所有这些算法都继承自 `StatModel` 类，这八种算法是:
+
 - 人工神经网络
 - 随机树
 - 期望最大化
@@ -65,6 +72,7 @@ template<typename _Tp> static Ptr<_Tp> train(const Ptr<TrainData>& data, int fla
 ```
 
 其参数含义：
+
 - `trainData`：从 `TrainData` 类加载或创建的训练数据
 - `samples`：一系列训练样本
 - `layout`：`ROW_SAMPLE` 表示训练样本是矩阵行，`COL_SAMPLE` 表示矩阵列
@@ -80,6 +88,7 @@ float StatModel::predict(InputArray samples, OutputArray results=noArray(), int 
 ```
 
 该预测函数具有以下参数：
+
 - `samples`：用于预测模型结果的输入样本，可以包含任意数量的数据
 
 <!-- TODO -->
@@ -87,6 +96,7 @@ float StatModel::predict(InputArray samples, OutputArray results=noArray(), int 
 ## 6.3 计算机视觉和机器学习工作流程
 
 具备机器学习的计算机视觉应用具有的共同基本结构，这种结构分为不同的步骤：
+
 1. 预处理
     - 几乎所有的计算机视觉应用程序都是以预处理开始
     - 包括去除光和噪声、滤波、模糊等
@@ -119,6 +129,7 @@ graph TD
 ## 6.4 自动对象检查分类示例
 
 执行步骤:
+
 1. 对于每个输入图像
     - 预处理图像
     - 分隔图像

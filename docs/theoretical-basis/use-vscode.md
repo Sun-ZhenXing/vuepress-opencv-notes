@@ -30,11 +30,13 @@
 ```
 
 这份配置依赖于已经安装的 Visual Studio，其中需要更改的配置：
+
 - `includePath` 需要改为本机的 OpenCV Include 路径，具体取决于安装时的路径
 - `windowsSdkVersion` 需要改为本机已经安装的 Windows SDK
 - `compilerPath` 修改为本机安装的 MSVC 编译器路径
 
 其他常见更改：
+
 - C/C++ 版本
 - 在 `env` 中定义用户定义变量
 - 定义标志 `defines`

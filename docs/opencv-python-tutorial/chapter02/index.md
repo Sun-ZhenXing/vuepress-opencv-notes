@@ -8,12 +8,12 @@
 
 - 读取、显示和保存图像
 - 函数
-    - `cv2.imread()` 读取图像
-    - `cv2.imshow()` 显示图像
-    - `cv2.imwrite()` 保存图像
-    - `cv2.waitKey()` 等待读入一个键盘值
-    - `cv2.destroyAllWindows()` 关闭所有窗体
-    - `cv2.namedWindow()` 创建命名窗体
+  - `cv2.imread()` 读取图像
+  - `cv2.imshow()` 显示图像
+  - `cv2.imwrite()` 保存图像
+  - `cv2.waitKey()` 等待读入一个键盘值
+  - `cv2.destroyAllWindows()` 关闭所有窗体
+  - `cv2.namedWindow()` 创建命名窗体
 - 如何使用 Matplotlib 显示图片，并解决颜色错乱的问题
 
 :::
@@ -137,10 +137,10 @@ cv2.destroyAllWindows()
 - 读取、显示和保存视频
 - 从摄像头读取并显示视频
 - 函数
-    - `cv2.VideoCapture()` 读取摄像头
-    - `cv2.VideoWrite()` 写入视频
-    - `cv2.cvtColor()` 转换颜色空间
-    - `cv2.flip()` 翻转图像
+  - `cv2.VideoCapture()` 读取摄像头
+  - `cv2.VideoWrite()` 写入视频
+  - `cv2.cvtColor()` 转换颜色空间
+  - `cv2.flip()` 翻转图像
 
 :::
 
@@ -234,6 +234,7 @@ cv2.destroyAllWindows()
 ```
 
 编码指南：
+
 - `X264` 适合小尺寸视频
 - `MJPG` 适合大尺寸视频
 - `XVID` 适合自适应
@@ -253,11 +254,11 @@ cv2.destroyAllWindows()
 
 - 绘制不同的几何图形
 - 函数
-    - `cv2.line()` 画线
-    - `cv2.circle()` 画圈
-    - `cv2.rectangle()` 矩形
-    - `cv2.ellipse()` 椭圆形
-    - `cv2.putText()` 绘制文本
+  - `cv2.line()` 画线
+  - `cv2.circle()` 画圈
+  - `cv2.rectangle()` 矩形
+  - `cv2.ellipse()` 椭圆形
+  - `cv2.putText()` 绘制文本
 
 :::
 
@@ -328,6 +329,7 @@ cv2.polylines(img, [pts], True, (255, 255, 255), 1)
 ### 2.3.6 在图片上添加文字
 
 设置参数：
+
 - 你要绘制的文字
 - 你要绘制的位置
 - 字体类型（通过查看 `cv2.putText()` 的文档找到支持的字体）
@@ -388,12 +390,14 @@ cv2.imwrite('image.png', img)
 ### 2.3.7 绘图函数总结
 
 参数列表：
+
 - `img`：你想要绘制图形的那幅图像
 - `color`：形状的颜色。以 RGB 为例，需要传入一个元组，例如：`(255, 0, 0)` 代表蓝色。对于灰度图只需要传入灰度值
 - `thickness`：线条的粗细。如果给一个闭合图形设置为 `-1`，那么这个图形就会被填充。默认值是 `1`
 - `linetype`：线条的类型，8 连接，抗锯齿等。默认情况是 8 连接。`cv2.LINE_AA` 为抗锯齿，这样看起来会非常平滑
 
 语法总结：
+
 - `line(img, pt1, pt2, color, thickness=..., lineType=..., shift=...)`
 - `rectangle(img, pt1, pt2, color, thickness=..., lineType=..., shift=...)`
 - `circle(img, center, radius, color, thickness=..., lineType=..., shift=...)`
@@ -406,7 +410,7 @@ cv2.imwrite('image.png', img)
 
 - 学习使用 OpenCV 处理鼠标事件
 - 函数
-    - `cv2.setMouseCallback()` 设置鼠标回调函数
+  - `cv2.setMouseCallback()` 设置鼠标回调函数
 
 :::
 
@@ -503,8 +507,8 @@ cv2.destroyAllWindows()
 
 - 把滑动条绑定到 OpenCV 窗口上
 - 函数
-    - `cv2.creatTrackbar()` 创建拖动条
-    - `cv2.getTrackbarPos()` 获取拖动条位置
+  - `cv2.creatTrackbar()` 创建拖动条
+  - `cv2.getTrackbarPos()` 获取拖动条位置
 
 :::
 

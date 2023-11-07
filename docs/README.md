@@ -21,9 +21,7 @@ footer: OpenCV 笔记合集，由 @Sun-ZhenXing 创建
 
 ::: tip 保存的资源
 
-[Lena 图片](./lena.png)
-
-下载 Lena 图片的命令：
+本站保存了 [Lena 图片](./lena.png)，下载 Lena 图片的命令：
 
 ```bash
 curl -O https://blog.alexsun.top/vuepress-opencv-notes/lena.png

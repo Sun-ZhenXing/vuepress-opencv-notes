@@ -1,6 +1,11 @@
 # 2. OpenCV 基础知识导论
 
+<!-- markdownlint-disable MD045 -->
+
+[[TOC]]
+
 本章介绍以下主题：
+
 - [x] 使用 CMake 配置项目
 - [x] 读取 / 写入图像
 - [x] 读取视频和访问相机
@@ -50,10 +55,12 @@ target_link_libraries(main Hello)
 链接库的时候指定 `SHARED` 或者 `STATIC` 能指定生成的库是静态库（`.a` / `.lib`）还是共享库（`.so` / `.dll`）。
 
 CMake 的链接是静态优先的，但查找库的时候默认查找 `.so` 文件，可以配合几个参数来个性化 CMake 设置：
+
 - `set(CMAKE_FIND_LIBRARY_SUFFIXES .a)` 设置查找库名后缀
 - `find_library()` 查找指定库
 
 创建库的时候也可以指定可见属性：
+
 - 如果源文件（`.cpp` / `.cc`）中包含第三方头文件，但是头文件（例如 `.hpp`）中不包含该第三方文件头，采用 `PRIVATE`
 - 如果源文件和头文件中都包含该第三方文件头，采用 `PUBLIC`
 - 如果头文件中包含该第三方文件头，但是源文件中不包含，采用 `INTERFACE`
@@ -183,6 +190,7 @@ target_include_directories(Utils PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 任何图像都可以表示为包含一系列数字的矩阵，一般这些数字用于表示光的波长或波长范围的光强度的测量结果。图像中的每个点被称为像素，每个像素可以存储一个或多个值。
 
 这些储存值的不同决定了图像的不同类别
+
 - 只有一个比特的二进制图像
 - 灰度图
 - 三通道彩色图像
@@ -308,6 +316,7 @@ make
 ```
 
 使用类似 `@name` 格式定义的参数将会作为默认输入。下面是一些解析器的实用方法：
+
 - `parser.about(msg)`：程序的关于信息
 - `parser.has(name)`：是否存在指定参数
 - `parser.get<cls>(index)`：获取指定位置的参数
@@ -370,6 +379,7 @@ Windows 调试摄像头可能出现莫名其妙的错误，查看 [Windows 错�
 ## 2.9 其他基本对象类型
 
 我们已经了解了 `Mat` 和 `Vec3b` 类，还有很多类需要学习，常见的是：
+
 - `Vec`
 - `Scalar`
 - `Point`
@@ -496,6 +506,7 @@ int area = s.area();
 ### 2.9.5 `Rect` 对象类型
 
 `Rect` 也是一个非常重要的模板类，用于定义以下参数的 2D 矩形：
+
 - 左上角是坐标
 - 矩形的宽度和高度
 
@@ -532,6 +543,7 @@ cv::Mat a = cv::Mat(cv::Size(5, 5), cv::CV_32F);
 :::
 
 常见的通道类型：
+
 - `CV_8UC1`
 - `CV_8UC3`
 - `CV_8UC4`
@@ -589,10 +601,12 @@ Mat d = a - b;
 OpenCV 支持元素积，需要使用 `.mul()` 方法，同样也支持乘一个数。
 
 其他常见操作：
+
 - 转置 `.t()`
 - 求逆 `.inv()`
 
 还有一些实用的数学函数：
+
 - `int countNonZero(src)` 计算非零元素数量
 - `void meanStdDev(src, mean, srddev)` 计算平均值和标准差
 - `void minMaxLoc(src, minVal, maxVal, minLoc, maxLoc)` 检测矩阵的最小值、最大值并且包括最值的位置

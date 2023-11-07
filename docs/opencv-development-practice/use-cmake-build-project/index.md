@@ -5,6 +5,7 @@
 首先，我们习惯上定义一个公共头文件 `common.h`，包含一些和系统有关的函数和宏。
 
 考虑到 Windows 臭名昭著的乱码和字符集问题，我们使用 `wchar_t` 类型来解决，其中：
+
 - 宏 `DLL_EXPORT` 表示这个函数被导出
 - 宏 `S` 表示将字符串常量转换为当前系统上的特定类型字符串
 - 类型 `path_t` 表示当前系统上的字符指针类型
@@ -116,11 +117,13 @@ create_target(yolov7)
 ### 3.1 Windows 下编译构建
 
 Windows 使用 CMake 可以采用几种不同的方式：
+
 1. 创建 Visual Studio 项目，在 VS 中构建，详情略
 2. 使用 CMake-GUI 编译，下面是步骤
 3. 使用 CMake 命令行工具
 
 下面是使用 CMake-GUI 的步骤：
+
 1. 配置 `source` 文件夹和 `build` 文件夹
 2. 点击 **配置**（Configure）
 3. 点击 **生成**（Generate）

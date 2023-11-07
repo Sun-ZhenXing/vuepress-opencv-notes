@@ -5,6 +5,7 @@
 ::: tip 仓库
 
 现在我给出了一份全新实现，支持 CUDA 加速，包含了 C++ 和 Python 版本的 OpenCV 推理代码。
+
 - [GitHub](https://github.com/Sun-ZhenXing/fast-neural-style)
 - [Gitee](https://gitee.com/sun-zhenxing/fast-neural-style)
 
@@ -24,18 +25,18 @@
 
 - `main.py`
 - `models/`
-    - `eccv16/`
-        - [`composition_vii.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/composition_vii.t7)
-        - [`la_muse.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/la_muse.t7)
-        - [`starry_night.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7)
-        - [`the_wave.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/the_wave.t7)
-    - `instance_norm/`
-        - [`candy.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/candy.t7)
-        - [`feathers.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7)
-        - [`la_muse.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/la_muse.t7)
-        - [`mosaic.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/mosaic.t7)
-        - [`the_scream.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/the_scream.t7)
-        - [`udnie.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/udnie.t7)
+  - `eccv16/`
+    - [`composition_vii.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/composition_vii.t7)
+    - [`la_muse.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/la_muse.t7)
+    - [`starry_night.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7)
+    - [`the_wave.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/the_wave.t7)
+  - `instance_norm/`
+    - [`candy.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/candy.t7)
+    - [`feathers.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7)
+    - [`la_muse.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/la_muse.t7)
+    - [`mosaic.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/mosaic.t7)
+    - [`the_scream.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/the_scream.t7)
+    - [`udnie.t7`](http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/udnie.t7)
 - `test.jpg`
 
 然后我们对每一个模型都进行推理测试：

@@ -1,6 +1,10 @@
 # OpenCV 使用 DNN 部署 YOLOv7
 
-参考项目[^参考项目]
+[[TOC]]
+
+详情见参考项目[^1]。
+
+[^1]: <https://github.com/hpc203/yolov7-opencv-onnxrun-cpp-py>
 
 ```python
 import argparse
@@ -189,5 +193,3 @@ if __name__ == '__main__':
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 ```
-
-[^参考项目]: <https://github.com/hpc203/yolov7-opencv-onnxrun-cpp-py>

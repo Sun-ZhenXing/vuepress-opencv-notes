@@ -1,6 +1,11 @@
 # 4. 深入研究直方图和滤波器
 
+<!-- markdownlint-disable MD045 -->
+
+[[TOC]]
+
 本章介绍以下主题：
+
 - [x] 直方图和直方图均衡
 - [x] 查找表
 - [x] 模糊和中位数模糊
@@ -9,6 +14,7 @@
 - [x] 图像类型之间的转换
 
 我们还会创建一个完整的应用程序，因此本章还将涵盖以下主题：
+
 - [x] 生成 CMake 脚本文件
 - [x] 创建图像用户界面
 - [x] 计算和绘制直方图
@@ -50,6 +56,7 @@ target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 ## 4.3 创建图形用户界面
 
 我们将使用基于 Qt 的 GUI，应用程序接收一个输入参数来加载要处理的图像。此外我们还有四个按钮：
+
 - Show histogram（展示直方图）
 - Equalize histogram（直方图均衡）
 - Lomography effect（LOMO 效果）

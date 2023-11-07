@@ -193,7 +193,7 @@ def build_train_data():
         output = model_inference(input=img)[0]
         res, kpts = post_process(img_src, output)
         if kpts.size > 0:
-            data.loc[i] = kpts[0]
+            data.loc[i] = kpts[0]  # type: ignore
             i += 1
         cv2.imshow("frame", res)
         if cv2.waitKey(1) & 0xFF == ord("q"):

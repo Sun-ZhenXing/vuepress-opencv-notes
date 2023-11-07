@@ -1,5 +1,5 @@
 # Builder
-FROM node:18.16.0-bullseye-slim as builder
+FROM node:20.9.0-bookworm as builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ RUN npm -v \
     && pnpm build
 
 # Nginx Server
-FROM nginx:1.24.0-alpine3.17-slim
+FROM nginx:1.25.3-alpine3.18-slim
 
 WORKDIR /usr/share/nginx/html/vuepress-opencv-notes/
 

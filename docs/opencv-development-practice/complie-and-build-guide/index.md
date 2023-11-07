@@ -80,12 +80,14 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ## 3. Windows 编译指南
 
 Windows 编译要求：
+
 - Visual Studio 2019，并安装 C++ 桌面开发基本组件
 - CMake GUI 版本，也可以完全使用命令行
 
 在配置过程中将会自动下载依赖。
 
 建议配置项：
+
 - CUDA 支持，如果安装了 CUDA 可选择支持，不过需要选择你的显卡对应的算力
 - `BUILD_opencv_world` 编译包含所有库的动态链接库
 - Test 选项可去除

@@ -1,8 +1,13 @@
 # 12. 使用 OpenCV 进行深度学习
 
+<!-- markdownlint-disable MD045 -->
+
+[[TOC]]
+
 本章我们将使用 OpenCV 的深度学习接口，并将其用于目标检测和人脸检测。
 
 本章介绍以下主题：
+
 - [x] 什么是深度学习
 - [x] OpenCV 如何与深度学习合作，以及如何实现深度学习神经网络（NN）
 - [x] YOLO，一种非常快速的深度学习对象检测算法
@@ -87,6 +92,7 @@ YOLOv3 架构基于 DarkNet，DarkNet 包含 53 个网络层，YOLOv3 增加了 
 YOLO 使用 COCO 数据集，COCO 数据集包含 80 个类别。
 
 下载文件：
+
 - 模型文件：`https://pjreddie.com/media/files/yolov3.weights`
 - 网络文件：`https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg`
 - 词汇表：`https://github.com/pjreddie/darknet/blob/master/data/coco.names`
@@ -125,6 +131,7 @@ Mat blobFromImage(
 ```
 
 其参数如下：
+
 - `image`：输入图像（可能是 1、3 或 4 通道）
 - `blob`：输出 `Mat` 对象
 - `scalefactor`：图像值乘数

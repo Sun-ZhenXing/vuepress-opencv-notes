@@ -12,6 +12,9 @@ class YOLOSegmentation:
         results = self.model.predict(source=img.copy(), save=False, save_txt=False)
         result: Results = results[0]
         segmentation_contours_idx = []
+        if result.boxes is None or result.masks is None:
+            return [], [], [], []
+
         for seg in result.masks.xyn:
             # contours
             seg[:, 0] *= width

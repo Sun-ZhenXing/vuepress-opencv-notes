@@ -12,7 +12,7 @@
 - 图像通道的拆分及合并
 - 图像的填充
 - 函数
-    - 学习使用 NumPy 的函数库处理图像
+  - 学习使用 NumPy 的函数库处理图像
 
 :::
 
@@ -52,6 +52,7 @@ img.itemset((10, 10, 2), 100)
 ### 3.1.2 获取图像属性
 
 可以参考 `np.ndarray` 属性：
+
 - `img.shape` 形状，即一个包含行、列和通道的元组
 - `img.size` 元素的数目，即像素乘通道的总数
 - `img.dtype` 元素类型
@@ -87,14 +88,15 @@ img[:, :, 2] = 0
 | ---- | ----------------------------------------------------------------------------------- |
 
 这个函数包括如下参数：
+
 - `src` 输入图像
 - `top, bottom, left, right` 对应边界的像素数目
 - `borderType` 要添加那种类型的边界，类型如下
-    - `cv2.BORDER_CONSTANT` 添加有颜色的常数值边界，还需要下一个参数 `value`
-    - `cv2.BORDER_REFLECT` 边界元素的镜像。比如 `fedcba|abcdefgh|hgfedcb`
-    - `cv2.BORDER_REFLECT_101` 或 `cv2.BORDER_DEFAULT` 跟上面一样，但稍作改动。例如 `gfedcb|abcdefgh|gfedcba`
-    - `cv2.BORDER_REPLICATE` 重复最后一个元素。例如 `aaaaaa|abcdefgh|hhhhhhh`
-    - `cv2.BORDER_WRAP` 就像这样 `cdefgh|abcdefgh|abcdefg`
+  - `cv2.BORDER_CONSTANT` 添加有颜色的常数值边界，还需要下一个参数 `value`
+  - `cv2.BORDER_REFLECT` 边界元素的镜像。比如 `fedcba|abcdefgh|hgfedcb`
+  - `cv2.BORDER_REFLECT_101` 或 `cv2.BORDER_DEFAULT` 跟上面一样，但稍作改动。例如 `gfedcb|abcdefgh|gfedcba`
+  - `cv2.BORDER_REPLICATE` 重复最后一个元素。例如 `aaaaaa|abcdefgh|hhhhhhh`
+  - `cv2.BORDER_WRAP` 就像这样 `cdefgh|abcdefgh|abcdefg`
 - `value` 边界颜色，如果边界的类型是 `cv2.BORDER_CONSTANT`
 
 为了更好的理解这几种类型请看下面的演示程序：
@@ -157,10 +159,10 @@ plt.show()
 - 图像上的加法、减法、位运算等
 - 图像混合
 - 函数
-    - `cv2.add()` 加法
-    - `cv2.addWeighted()` 带权加法，即图像混合
-    - `cv2.bitwise_not()` 按位翻转
-    - `cv2.bitwise_and()` 按位与
+  - `cv2.add()` 加法
+  - `cv2.addWeighted()` 带权加法，即图像混合
+  - `cv2.bitwise_not()` 按位翻转
+  - `cv2.bitwise_and()` 按位与
 
 :::
 
@@ -174,6 +176,7 @@ OpenCV 中的加法与 NumPy 的加法是有所不同的。OpenCV 的加法
 :::
 
 例如，在 `dtype=np.uint8` 的情况下
+
 ```python
 import cv2
 import numpy as np
@@ -259,17 +262,18 @@ cv2.destroyAllWindows()
 - 检测程序的效率
 - 一些能够提高程序效率的技巧
 - 函数
-    - `cv2.getTickCount()`
-    - `cv2.getTickFrequency()`
+  - `cv2.getTickCount()`
+  - `cv2.getTickFrequency()`
 - 扩展
-    - IPython
-    - 模块 `time` 和 `timeit`
+  - IPython
+  - 模块 `time` 和 `timeit`
 
 :::
 
 ### 3.3.1 使用 OpenCV 检测程序效率
 
 可用函数：
+
 - `cv2.getTickCount()` 函数返回从参考点到这个函数被执行的时钟数。所以当你在一个函数执行前后都调用它的话，你就会得到这个函数的执行时间
 - `cv2.getTickFrequency()` 返回时钟频率，或者说每秒钟的时钟数。所以你可以按照下面的方式得到一个函数运行了多少秒
 
@@ -342,6 +346,7 @@ y = np.squre(x)
 还有几个魔法命令可以用来检测程序的效率、内存使用等。
 
 常见魔法命令：
+
 - 使用 `%magic` 可以直接调出有关于魔法命令的详细说明文档，这就等同于 `vim` 编辑器中的 `:help` 一样
 - 你只是想列出哪些魔法命令我们可以使用，那么可以直接调用 `%lsmagic` 进行输出
 - 如果只是查看具体某个魔法命令的用法，那么可以直接在魔法命令之后接上一个 `?` 问号，类似于这样 `%run?`
@@ -349,6 +354,7 @@ y = np.squre(x)
 ### 3.3.5 效率优化技术
 
 算法优化原则：
+
 1. 算法中尽量使用向量操作，因为 NumPy 和 OpenCV 都对向量操作进行了优化
 2. 利用高速缓存一致性
 
